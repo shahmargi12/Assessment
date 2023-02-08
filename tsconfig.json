@@ -15,9 +15,9 @@
     "isolatedModules": true,
     // "noEmit": true,
     "jsx": "react-jsx",
-    "outDir": "lib",    
+    "outDir": "lib"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "lib"],
+  "exclude": ["node_modules", "lib", "./src/components/**/*.stories.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
