@@ -1,6 +1,6 @@
-import * as React from "react"
-import { IconType } from '@foster/types/common';
+import React from "react"
 import styled from 'styled-components';
+import { IconType } from '../types/common';
 
 const StyledIcon = styled.path`
     fill: ${({ theme }) => theme.colors.primaryBlack};

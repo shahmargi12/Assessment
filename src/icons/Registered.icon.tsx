@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { IconType } from '@foster/types/common';
+import { IconType } from '../types/common';
 const StyledPath = styled.path`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.primaryBlack)};
     fill-rule: evenodd;

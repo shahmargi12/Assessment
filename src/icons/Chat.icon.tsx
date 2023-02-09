@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { IconType } from '@foster/types/common';
+import React from "react"
 import styled from 'styled-components';
+import { IconType } from '../types/common';
 
 type ColorType = {
     fill?: string;
@@ -44,5 +44,10 @@ const ChatIcon = ({ height, width, fill, props }: IconType) => (
         </g>
     </svg>
 );
+
+ChatIcon.defaultProps = {
+    width: 20,
+    height: 20,
+}
 
 export default ChatIcon;

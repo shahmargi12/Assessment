@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { IconType } from '@foster/types/common';
+import React from "react"
 import styled from 'styled-components';
+import { IconType } from '../types/common';
 type ColorType = {
     fill: string;
 };
@@ -17,5 +17,10 @@ const ThreeHorizontalBarIcon = ({ height, width, fill, ...props }: IconType) => 
         </g>
     </svg>
 );
+
+ThreeHorizontalBarIcon.defaultProps = {
+    width: 18,
+    height: 14,
+}
 
 export default ThreeHorizontalBarIcon;
