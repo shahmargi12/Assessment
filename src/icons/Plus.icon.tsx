@@ -5,6 +5,7 @@ import { IconType, ColorType } from '../types/common';
 const StyledPath = styled.path<ColorType>`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.primaryBlack)};
 `;
+
 const PlusIcon = ({ width, height, fill, ...props }: IconType) => (
     <svg width={width} height={height} viewBox="0 0 14.1 14.1" xmlSpace="preserve" {...props}>
         <StyledPath

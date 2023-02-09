@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { IconType, ColorType } from '../types/common';
 
-
 const StyledPath = styled.path<ColorType>`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.darkGreyBlue)};
 `;
@@ -68,4 +67,5 @@ WritingIcon.defaultProps = {
     width: 40,
     height: 40,
 };
+
 export default WritingIcon;

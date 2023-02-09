@@ -2,8 +2,6 @@ import React from "react"
 import styled from 'styled-components';
 import { IconType, ColorType } from '../types/common';
 
-
-
 const StyledPath = styled.path<ColorType>`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.primaryBlack)};
 `;
@@ -16,6 +14,7 @@ const HourglassIcon = ({ width, height, fill, ...props }: IconType) => (
         />
     </svg>
 );
+
 HourglassIcon.defaultProps = {
     width: 11.968,
     height: 14.961,

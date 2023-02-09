@@ -2,7 +2,6 @@ import React from "react"
 import styled from 'styled-components';
 import { IconType, ColorType } from '../types/common';
 
-
 const StyledPath = styled.path<ColorType>`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.darkGreyBlue)};
 `;
@@ -59,8 +58,10 @@ const OrderedList = ({ width, height, fill, ...props }: IconType) => (
         />
     </svg>
 );
+
 OrderedList.defaultProps = {
     width: 15.836,
     height: 13.504,
 };
+
 export default OrderedList;

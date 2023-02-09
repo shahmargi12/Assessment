@@ -5,6 +5,7 @@ import { IconType, ColorType } from '../types/common';
 const StyledPath = styled.path<ColorType>`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.primaryBlack)};
 `;
+
 const TimeIcon = ({ width, height, fill, props }: IconType) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width={width} height={height} {...props}>
         <g data-name="Job Time">

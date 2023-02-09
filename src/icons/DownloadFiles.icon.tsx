@@ -2,7 +2,6 @@ import React from "react"
 import styled from 'styled-components';
 import { IconType, ColorType } from '../types/common';
 
-
 const StyledRect = styled.rect<ColorType>`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.darkBlueGrey)};
 `;

@@ -2,7 +2,6 @@ import React from "react"
 import styled from 'styled-components';
 import { IconType, ColorType } from '../types/common';
 
-
 const StyledPath = styled.path<ColorType>`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.darkGreyBlue)};
 `;
@@ -23,4 +22,5 @@ Italic.defaultProps = {
     height: 13.115,
     width: 10.451,
 };
+
 export default Italic;

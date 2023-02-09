@@ -30,4 +30,4 @@ PencilIcon.defaultProps = {
     height: 16.003,
 };
 
-export default PencilIcon
+export default PencilIcon;
