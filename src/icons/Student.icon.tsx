@@ -2,14 +2,6 @@ import React from "react"
 import styled from 'styled-components';
 import { IconType } from '../types/common';
 
-type ColorType = {
-    fill?: string;
-};
-
-const StyledPath = styled.path<ColorType>`
-    fill: ${({ theme, fill }) => (fill ? fill : theme.colors.primaryBlack70)};
-`;
-
 const StudentIcon = ({ width, height, fill, ...props }: IconType) => (
     <svg
         width={width}

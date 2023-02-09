@@ -1,16 +1,14 @@
 import React from "react"
 import styled from 'styled-components';
-import { IconType } from '../types/common';
+import { IconType, ColorType } from '../types/common';
 
-type ColorType = {
-    fill?: string;
-};
+
 
 const StyledSVG = styled.svg<ColorType>`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.primaryBlack70)};
 `;
 
-const SearchIcon = ({ width, height, fill, props }: any) => (
+const SearchIcon = ({ width, height, fill, props }: IconType) => (
     <StyledSVG xmlns="http://www.w3.org/2000/svg" width={width} height={height} fill={fill} {...props}>
         <g data-name="search filter">
             <g data-name="Group 41397">

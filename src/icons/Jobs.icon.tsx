@@ -1,14 +1,12 @@
 import React from "react"
 import styled from 'styled-components';
-import { IconType } from '../types/common';
-type ColorType = {
-    fill: string;
-};
-const StyledPath = styled.path<ColorType>`
+import { IconType, ColorType } from '../types/common';
+
+const StyledPath = styled.path`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.primaryBlack)};
 `;
 
-const JobsIcon = ({ height, width, fill, ...props }: IconType) => (
+const JobsIcon = ({ height, width, fill, props }: IconType) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"

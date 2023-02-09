@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IconType } from '../types/common';
-
-type ColorType = {
-    fill?: string;
-    ribbon?: boolean;
-};
+import { IconType, ColorType } from '../types/common';
 
 const StyledPath = styled.path<ColorType>`
     fill: ${({ theme, ribbon }) => !ribbon && theme.colors.gray1};

@@ -1,13 +1,11 @@
 import React from "react"
 import styled from 'styled-components';
-import { IconType } from '../types/common';
-type ColorType = {
-    fill: string;
-};
+import { IconType, ColorType } from '../types/common';
+
 const StyledPath = styled.path<ColorType>`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.primaryBlack)};
 `;
-const TimeIcon = ({ width, height, fill, props }: any) => (
+const TimeIcon = ({ width, height, fill, props }: IconType) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width={width} height={height} {...props}>
         <g data-name="Job Time">
             <g data-name="Group 41384">

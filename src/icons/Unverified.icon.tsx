@@ -1,11 +1,7 @@
 import React from "react"
 import styled from 'styled-components';
-import { IconType } from '../types/common';
+import { IconType, ColorType } from '../types/common';
 
-type ColorType = {
-    fill1?: string;
-    fill2?: string;
-};
 const StyledPath1 = styled.path<ColorType>`
     fill: ${({ theme, fill1 }) => (fill1 ? fill1 : theme.colors.strawberry)};
 `;

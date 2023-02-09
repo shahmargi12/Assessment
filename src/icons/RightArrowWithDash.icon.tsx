@@ -1,17 +1,17 @@
 import React from "react"
 import styled from 'styled-components';
-import { IconType } from '../types/common';
+import { IconType, ColorType } from '../types/common';
 
 const StyledPath = styled.path`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.primaryBlack)};
 `;
 
-const RightArrowWithDash = (props: IconType) => (
+const RightArrowWithDash = ({ width, height, ...props }: IconType) => (
     <svg
         id="left-arrow"
         xmlns="http://www.w3.org/2000/svg"
-        width={props.height}
-        height={props.width}
+        width={height}
+        height={width}
         viewBox="0 0 14 13.109"
         {...props}
     >
