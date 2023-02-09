@@ -10,7 +10,7 @@ const StyledRect = styled.rect<ColorType>`
     fill: ${({ theme, fill }) => (fill ? fill : theme.colors.primaryBlack4)};
 `;
 
-const PPOPrize = ({ width, height, ribbon, fill, ...props }: IconType & ColorType) => (
+const PPOPrize = ({ width, height, ribbon, fill, ...props }: IconType) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} {...props} viewBox="0 0 464.5 232.5">
         <g id="price" transform="translate(13444.5 -1639)">
             <g id="Group_51269" data-name="Group 51269" transform="translate(-13670 -1357)">
