@@ -1,2 +1,2 @@
-import { Button, Grid } from "./components";
-export { Button, Grid };
+import { Button, Grid, GlobalStyleWrapper } from "./components";
+export { Button, Grid, GlobalStyleWrapper };
