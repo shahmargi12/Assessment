@@ -1,10 +1,10 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import { StylesProvider } from "@material-ui/core";
 import {
   createTheme,
   ThemeProvider as MaterialThemeProvider,
-  StylesProvider,
-} from "@material-ui/core/styles";
+} from "@mui/material/styles";
 import defaultTheme from "../../theme";
 
 type GlobalStyleWrapperProp = {
@@ -42,14 +42,14 @@ const GlobalStyleWrapper = ({
   children,
   GlobalStyle,
 }: GlobalStyleWrapperProp): React.ReactElement => {
-    return (
-      <StylesProvider injectFirst>
-        <MaterialThemeProvider theme={materialUiTheme}>
-          <GlobalStyle />
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
-        </MaterialThemeProvider>
-      </StylesProvider>
-    );
-  };
+  return (
+    <StylesProvider injectFirst>
+      <MaterialThemeProvider theme={materialUiTheme}>
+        <GlobalStyle />
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </MaterialThemeProvider>
+    </StylesProvider>
+  );
+};
 
 export default GlobalStyleWrapper;

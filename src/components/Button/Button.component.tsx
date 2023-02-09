@@ -1,6 +1,5 @@
 import React, { useMemo, useRef } from "react";
-// import { ButtonPropsVariantOverrides, ButtonPropsSizeOverrides } from '@mui/material/Button';
-import { StyledButton } from "./Button.styled";
+import { StyledButton, StyledLoadingController } from "./Button.styled";
 
 export type ButtonVariants =
   | "contained"
@@ -38,7 +37,7 @@ export interface ButtonPropTypes {
   variant: ButtonVariants;
   size: ButtonSizes;
   href?: string;
-  isLoading?: boolean;
+  isLoading: boolean;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   disabled?: boolean;
@@ -59,7 +58,6 @@ export const LoadingSizeMap: Record<ButtonSizes, number> = {
 };
 
 export const getLoadingStyleAsPerVariantAndSize = (
-  variant: ButtonVariants,
   size: ButtonSizes
 ): { size: number } => {
   return {
@@ -90,6 +88,10 @@ function ButtonComponent({
   form,
 }: ButtonPropTypes): React.ReactElement {
   const buttonRef = useRef<HTMLButtonElement | null>();
+  const loadingStyle = useMemo(
+    () => getLoadingStyleAsPerVariantAndSize(size),
+    [variant, size]
+  );
   const disabledClassName = useMemo(
     () => getDisabledClassnamesAsPerVariant(variant),
     [variant]
@@ -121,7 +123,7 @@ function ButtonComponent({
         ? { style: { minWidth: buttonRef.current.clientWidth } }
         : {})}
     >
-      {children}
+      {isLoading ? <StyledLoadingController {...loadingStyle} /> : children}
     </StyledButton>
   );
 }
