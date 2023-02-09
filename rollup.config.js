@@ -29,8 +29,6 @@ chunkArray.forEach((path) => {
   input[name[name.length - 2]] = path;
 });
 
-console.log(input);
-
 export default {
   input: {
     index: "src/index.ts",
