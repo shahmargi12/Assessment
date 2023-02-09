@@ -1,6 +1,6 @@
 import React from "react"
-import { IconType } from '../types/common';
 import styled from 'styled-components';
+import { IconType } from '../types/common';
 type ColorType = {
     fill: string;
 };
