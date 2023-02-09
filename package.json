@@ -1,6 +1,6 @@
 {
   "name": "@shahmargi12/assess-lib",
-  "version": "0.0.11",
+  "version": "0.0.15",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
@@ -22,7 +22,6 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@material-ui/core": "^4.12.4",
     "@mui/material": "^5.11.8",
     "@mui/styled-engine-sc": "^5.11.0",
     "@rollup/plugin-image": "^3.0.2",

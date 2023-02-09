@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { GlobalStyleWrapper } from "./components";
+import GlobalStyleWrapper  from "./components/GlobalStyleWrapper";
 import "./index.scss";
 import defaultTheme from "./theme";
 import { GlobalStyle } from "./theme/GlobalStyle";

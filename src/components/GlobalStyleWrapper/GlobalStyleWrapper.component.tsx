@@ -1,11 +1,11 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import { StylesProvider } from "@material-ui/styles";
 import {
-  createTheme,
   ThemeProvider as MaterialThemeProvider,
+  StyledEngineProvider,
+  createTheme,
 } from "@mui/material/styles";
 import defaultTheme from "../../theme";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 
 type GlobalStyleWrapperProp = {
   theme: any;
@@ -38,18 +38,22 @@ const materialUiTheme = createTheme({
 });
 
 const GlobalStyleWrapper = ({
-  theme = defaultTheme,
+  theme,
   children,
   GlobalStyle,
-}: GlobalStyleWrapperProp) => {
+}: GlobalStyleWrapperProp): React.ReactElement => {
   return (
-    // <StylesProvider injectFirst>
-    <MaterialThemeProvider theme={materialUiTheme}>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-    </MaterialThemeProvider>
-    // </StylesProvider>
+    <StyledEngineProvider injectFirst>
+      <MaterialThemeProvider theme={materialUiTheme}>
+        <GlobalStyle />
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </MaterialThemeProvider>
+    </StyledEngineProvider>
   );
+};
+
+GlobalStyleWrapper.defaultProps = {
+  theme: defaultTheme,
 };
 
 export default GlobalStyleWrapper;

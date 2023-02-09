@@ -1,7 +1,7 @@
 import React from "react";
 import GlobalStyleWrapper from "../src/components/GlobalStyleWrapper";
 import { GlobalStyle } from "./GloablStyle";
-import { Theme } from "../src/theme/default.tsx";
+import Theme from "../src/theme";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -13,10 +13,10 @@ export const parameters = {
   },
 };
 
-export const decorators = [
-  (Story) => (
-    <GlobalStyleWrapper theme={Theme} GlobalStyle={GlobalStyle}>
-      <Story />
-    </GlobalStyleWrapper>
-  ),
-];
+const decorator = (Story) => (
+  <GlobalStyleWrapper theme={Theme} GlobalStyle={GlobalStyle}>
+    <Story />
+  </GlobalStyleWrapper>
+);
+
+export const decorators = [decorator];
