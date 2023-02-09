@@ -37,7 +37,7 @@ export interface ButtonPropTypes {
   variant: ButtonVariants;
   size: ButtonSizes;
   href?: string;
-  isLoading: boolean;
+  isLoading?: boolean;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   disabled?: boolean;
