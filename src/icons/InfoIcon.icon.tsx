@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import { IconType } from '@foster/types/common';
+import styled from 'styled-components';
 
 type ColorType = {
     fill: string;
