@@ -1,6 +1,6 @@
 {
   "name": "@shahmargi12/assess-lib",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
@@ -27,6 +27,7 @@
     "@mui/styled-engine-sc": "^5.11.0",
     "@rollup/plugin-image": "^3.0.2",
     "@rollup/plugin-typescript": "^11.0.0",
+    "@storybook/addon-postcss": "^2.0.0",
     "@types/styled-components": "^5.1.26",
     "react": "^17.0.2",
     "react-dom": "^17.0.0",

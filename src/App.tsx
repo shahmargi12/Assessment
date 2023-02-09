@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
+import { Button } from "./components";
 
 function App() {
-    return <div>Test</div>;
+  return (
+    <div>
+      <Button>Abx xsxns x</Button>
+    </div>
+  );
 }
 
 export default App;
