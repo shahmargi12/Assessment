@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import styled from 'styled-components';
 import { IconType, ColorType } from '../types/common';
 
@@ -24,4 +24,4 @@ DownArrowIcon.defaultProps = {
     height: 6.75,
 };
 
-export default DownArrowIcon
+export default DownArrowIcon;
