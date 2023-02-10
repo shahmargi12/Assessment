@@ -1,6 +1,6 @@
 import React from "react";
 import Checkbox, { CheckboxProps } from "@mui/material/Checkbox";
-// import ThemeIcons from '@foster/ThemeIcons';
+import Icons from "../../Icons";
 import { StyledCheckbox } from "./Checkbox.styled";
 
 export interface CheckBoxProps extends CheckboxProps {
@@ -13,8 +13,10 @@ function CheckboxComp({ height, width, ...props }: CheckBoxProps): JSX.Element {
     <StyledCheckbox>
       <Checkbox
         {...props}
-        // icon={<ThemeIcons.CheckboxIcon height={height} width={width} />}
-        // checkedIcon={<ThemeIcons.CheckboxSelectedIcon height={height} width={width} />}
+        icon={<Icons.CheckboxIcon height={height} width={width} />}
+        checkedIcon={
+          <Icons.CheckboxSelectedIcon height={height} width={width} />
+        }
       />
     </StyledCheckbox>
   );

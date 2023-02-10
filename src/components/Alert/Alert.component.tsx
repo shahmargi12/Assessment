@@ -6,7 +6,7 @@ import Success from "./../../assets/images/successToast.svg";
 import Warning from "./../../assets/images/warningToast.svg";
 import Info from "./../../assets/images/fosterToast.svg";
 import ErrorIcon from "./../../assets/images/errorToast.svg";
-// import ThemeIcons from '@foster/ThemeIcons';
+import Icons from "../../Icons";
 import { StyleCloseIconContainer } from "./Alert.styled";
 
 type AlertType = "info" | "error" | "success" | "warning" | "default";
@@ -78,7 +78,7 @@ const ToastCloseIcon = (): JSX.Element => {
   return (
     <StyleCloseIconContainer>
       <div className="closeIcon">
-        {/* <ThemeIcons.CloseIcon opacity={0} /> */}
+        <Icons.CloseIcon opacity={0} />
       </div>
     </StyleCloseIconContainer>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ClickAwayListener } from "@mui/material";
 import { Theme } from "../../theme/default";
-// import ThemeIcons from '@foster/ThemeIcons';
+import Icons from "../../Icons";
 import Checkbox from "../Checkbox";
 import {
   StyledDropDownSelector,
@@ -280,11 +280,7 @@ const AlphabeticalDropdown = ({
                   toggleDropdown ? "downIconTransition" : ""
                 } downIcon`}
               >
-                {/* <ThemeIcons.DownArrowIcon
-                  width={14}
-                  height={8}
-                  opacity="none"
-                /> */}
+                <Icons.DownArrowIcon width={14} height={8} opacity="none" />
               </div>
             </div>
           </div>
@@ -295,7 +291,7 @@ const AlphabeticalDropdown = ({
             <StyledDropdown width={width} dropdownPosition={dropdownPosition}>
               <div className="dropdownHeader">
                 <div className="searchContainer">
-                  {/* <ThemeIcons.SearchIcon fill={Theme.colors.primaryBlack20} /> */}
+                  <Icons.SearchIcon fill={Theme.colors.primaryBlack20} />
                   <input
                     value={searchString}
                     placeholder="Search"
@@ -348,10 +344,10 @@ const AlphabeticalDropdown = ({
                       setToggleDropdown(false);
                     }}
                   >
-                    {/* <ThemeIcons.CloseIcon
+                    <Icons.CloseIcon
                       fill={Theme.colors.primaryBlack40}
                       opacity="none"
-                    /> */}
+                    />
                   </IconButton>
                 </div>
               </div>

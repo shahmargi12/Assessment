@@ -2,7 +2,7 @@ import React from "react";
 import FormLabel from "@mui/material/FormLabel";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
-// import ThemeIcons from '@foster/ThemeIcons';
+import Icons from "../../Icons";
 import {
   StyledCheckbox,
   StyledFormControlLabel,
@@ -68,8 +68,8 @@ function CheckboxGroup({
                   color="primary"
                   indeterminate={item.indeterminate}
                   size={size}
-                  // icon={<ThemeIcons.CheckboxIcon />}
-                  // checkedIcon={<ThemeIcons.CheckboxSelectedIcon />}
+                  icon={<Icons.CheckboxIcon />}
+                  checkedIcon={<Icons.CheckboxSelectedIcon />}
                   height={height}
                   width={width}
                 />

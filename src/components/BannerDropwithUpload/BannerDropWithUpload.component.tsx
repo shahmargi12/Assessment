@@ -1,7 +1,7 @@
 import React, { useState, MouseEventHandler } from "react";
 import { getAlert } from "../../hooks";
 import { Theme } from "../../theme/default";
-// import ThemeIcons from '@foster/ThemeIcons';
+import Icons from "../../Icons";
 import {
   StyledBannerDropWithUploadContainer,
   StyledFileDropWithUploadMainSection,
@@ -122,7 +122,7 @@ function BannerDropWithUploadComponent({
           <>
             <div className="image-circle">
               <button type="button" onClick={onDeleteFile}>
-                {/* <ThemeIcons.DeleteBannerIcon height={32} width={32} /> */}
+                <Icons.DeleteBannerIcon height={32} width={32} />
               </button>
               <img src={`${bannerImgSrc}`} alt="" />
             </div>
@@ -132,7 +132,7 @@ function BannerDropWithUploadComponent({
                 type="button"
                 onClick={() => onUploadBanner("uploadBanner")}
               >
-                {/* <ThemeIcons.UpdateIcon height={32} width={32} /> */}
+                <Icons.UpdateIcon height={32} width={32} />
               </button>
             </StyleEditBannerBtn>
           </>
@@ -140,7 +140,7 @@ function BannerDropWithUploadComponent({
           <>
             <div className="image-circle">
               <button type="button" onClick={onDeleteFile}>
-                {/* <ThemeIcons.DeleteBannerIcon height={32} width={32} /> */}
+                <Icons.DeleteBannerIcon height={32} width={32} />
               </button>
               <img src={`${bannerImageUrl}`} alt="" />
             </div>
@@ -150,7 +150,7 @@ function BannerDropWithUploadComponent({
                 type="button"
                 onClick={() => onUploadBanner("uploadBanner")}
               >
-                {/* <ThemeIcons.UpdateIcon height={32} width={32} /> */}
+                <Icons.UpdateIcon height={32} width={32} />
               </button>
             </StyleEditBannerBtn>
           </>
@@ -158,12 +158,12 @@ function BannerDropWithUploadComponent({
           <>
             <StyleBannerButton>
               <StyledBannerAvatarContainer fColor={forColor}>
-                {/* <ThemeIcons.UploadCloudIcon
+                <Icons.UploadCloudIcon
                   height={35}
                   width={35}
                   fill1={Theme.colors.primaryBlack30}
                   fill2={Theme.colors.primaryBlack}
-                /> */}
+                />
               </StyledBannerAvatarContainer>
               <button
                 type="button"

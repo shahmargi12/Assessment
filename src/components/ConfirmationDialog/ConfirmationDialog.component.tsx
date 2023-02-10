@@ -1,7 +1,7 @@
 import React, { MouseEventHandler, useState } from "react";
 import { IconButton } from "@mui/material";
 import Button from "../Button/Button.component";
-// import ThemeIcons from '@foster/ThemeIcons';
+import Icons from "../../Icons";
 import { StyledDiv, StyledModalContainer } from "./ConfirmationDialog.styled";
 
 type DialogProps = {
@@ -69,7 +69,7 @@ function ConfirmationDialog({
               <div className="rightSection">
                 {isShowCloseIcon && (
                   <IconButton onClick={handleClose}>
-                    {/* <ThemeIcons.CloseIcon width={15} height={15} /> */}
+                    <Icons.CloseIcon width={15} height={15} />
                   </IconButton>
                 )}
               </div>
