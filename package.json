@@ -30,7 +30,10 @@
     "@storybook/addon-postcss": "^2.0.0",
     "@types/styled-components": "^5.1.26",
     "react": "^17.0.2",
+    "react-data-table-component": "^7.5.3",
     "react-dom": "^17.0.0",
+    "react-file-drop": "^3.1.6",
+    "react-toastify": "^9.1.1",
     "rollup-plugin-dts": "^5.1.1",
     "styled-components": "^5.3.6"
   },
