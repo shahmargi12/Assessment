@@ -1,11 +1,11 @@
 import React from "react";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 import {
   ThemeProvider as MaterialThemeProvider,
   StyledEngineProvider,
   createTheme,
 } from "@mui/material/styles";
 import defaultTheme from "../../theme";
-import { ThemeProvider, createGlobalStyle } from "styled-components";
 
 type GlobalStyleWrapperProp = {
   theme: any;
