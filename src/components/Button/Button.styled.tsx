@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import Button, { ButtonProps } from '@mui/material/Button';
+import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-import { ButtonPropTypes } from './Button.component';
 
-export const StyledButton = styled(Button)<ButtonPropTypes & ButtonProps>`
+export const StyledButton = styled(Button)`
     font-size: 15px;
 
     &.MuiButtonBase-root {
