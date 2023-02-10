@@ -37,6 +37,6 @@ const Foster = ({ height, width, backgroundFill, textFill, ...props }: FosterIco
 Foster.defaultProps = {
     width: 50,
     height: 50,
-}
+};
 
 export default Foster;

@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import styled from 'styled-components';
 import { IconType, ColorType } from '../types/common';
 
@@ -44,6 +44,6 @@ const ChatIcon = ({ height, width, fill, props }: IconType) => (
 ChatIcon.defaultProps = {
     width: 20,
     height: 20,
-}
+};
 
 export default ChatIcon;
