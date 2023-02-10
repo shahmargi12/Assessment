@@ -1,4 +1,5 @@
 import { BACKGROUND_COLOR_ARRAY } from "./constant";
+import REGEX from "./Regex";
 
 export const PARSE_INT_RADIX = {
   BINARY: 2,
@@ -49,6 +50,16 @@ export const isEmptyValue = (value) => {
     return false;
   } catch (error) {
     console.log(error);
+  }
+};
+
+export const getTextLength = (text: string) => {
+  if (text) {
+    const convertedText = text.replace(REGEX.CRLF, " ");
+    const textLength = convertedText.length;
+    return textLength;
+  } else {
+    return 0;
   }
 };
 
