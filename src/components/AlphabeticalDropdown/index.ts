@@ -1,3 +1,3 @@
-import AlphabeticalDropdown from "./AlphabeticalDropdown.component";
+import AlphabeticalDropdown from './AlphabeticalDropdown.component';
 
 export default AlphabeticalDropdown;

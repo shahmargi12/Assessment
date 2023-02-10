@@ -1,6 +1,24 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
+import InterRegular from '/assets/fonts/inter/Inter-Regular.ttf';
+import RalewayBold from '/assets/fonts/raleway/Raleway-ExtraBold.ttf';
 
 export const GlobalStyle = createGlobalStyle`
+    @font-face {
+        font-family: 'Inter';
+        src: url('${InterRegular}') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Raleway';
+        src: url('${RalewayBold}') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+
     html {
         line-height: 1.15; /* 1 */
         -webkit-text-size-adjust: 100%; /* 2 */
@@ -9,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        margin: 0;
+        margin: 50px;
         padding: 0;
         box-sizing: border-box;
         font: {
@@ -17,6 +35,7 @@ export const GlobalStyle = createGlobalStyle`
             weight: 500;
         }
     }
+    
     *{
         margin:0;
         padding: 0;

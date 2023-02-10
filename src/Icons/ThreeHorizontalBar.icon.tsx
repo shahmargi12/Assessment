@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import styled from 'styled-components';
 import { IconType, ColorType } from '../types/common';
 
@@ -19,6 +19,6 @@ const ThreeHorizontalBarIcon = ({ height, width, fill, ...props }: IconType) => 
 ThreeHorizontalBarIcon.defaultProps = {
     width: 18,
     height: 14,
-}
+};
 
 export default ThreeHorizontalBarIcon;
