@@ -1,0 +1,5 @@
+.eslintrc.js
+.prettierrc.js
+tsconfig.json
+vite.config.ts
+env.d.ts
