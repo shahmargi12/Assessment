@@ -1,4 +1,4 @@
-import { BACKGROUND_COLOR_ARRAY } from "./constant";
+import { BACKGROUND_COLOR_ARRAY } from './constant';
 
 export const PARSE_INT_RADIX = {
     BINARY: 2,
@@ -8,21 +8,20 @@ export const PARSE_INT_RADIX = {
 };
 
 export function nameToColor(username: string) {
-  try {
-      let hash = 0;
-      for (var i = 0; i < username.length; i++) {
-          hash += username.charCodeAt(i);
-      }
-      hash = hash % BACKGROUND_COLOR_ARRAY.length;
-      return BACKGROUND_COLOR_ARRAY[hash];
-  } catch (error) {
-      console.error(error);
-  }
+    try {
+        let hash = 0;
+        for (var i = 0; i < username.length; i++) {
+            hash += username.charCodeAt(i);
+        }
+        hash = hash % BACKGROUND_COLOR_ARRAY.length;
+        return BACKGROUND_COLOR_ARRAY[hash];
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 export const numberInput = (e) => {
-  if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.' || e.key === 'E') {
-      e.preventDefault();
-  }
+    if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.' || e.key === 'E') {
+        e.preventDefault();
+    }
 };
-
