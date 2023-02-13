@@ -49,7 +49,7 @@ function FileUploadComponent({
     resetParentState,
     ...otherProps
 }: FormFileUploadProps): JSX.Element {
-    const [fileUrl, setFileUrl] = useState<string | null>();
+    const [fileUrl, setFileUrl] = useState<string>();
     const [fileName, setFileName] = useState<string>();
     const [error, setError] = useState<string>('');
 
