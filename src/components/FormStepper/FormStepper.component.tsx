@@ -7,7 +7,7 @@ type StepsProps = {
     stepsData: { label: string; step: number; description: string }[];
     title: string;
     activeStep: number;
-    onClickStep?: (step: number) => void;
+    onClickStep: (step: number) => void;
 };
 
 const steps = [

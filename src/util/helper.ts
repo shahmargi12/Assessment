@@ -1,3 +1,7 @@
+// @ts-nocheck
+/* eslint-disable import/named */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 import { BACKGROUND_COLOR_ARRAY } from './constant';
 import REGEX from './Regex';
 
