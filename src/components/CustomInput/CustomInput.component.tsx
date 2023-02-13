@@ -30,8 +30,7 @@ export type InputCompProps = {
     restrictNegative?: boolean;
     autoFocus?: boolean;
     onBlur?: () => void;
-    minHeight?: boolean;
-    padding?: string;
+    minHeight: boolean;
     variant?: 'filled';
     required?: boolean;
     autoComplete?: string;
@@ -56,7 +55,6 @@ const CustomInput = ({
     autoFocus,
     onBlur,
     minHeight,
-    padding,
     placeholder,
     variant,
     required,
@@ -79,7 +77,6 @@ const CustomInput = ({
         <StyledInputContainer minHeight={minHeight}>
             <StyledInput
                 type={type}
-                padding={padding}
                 onChange={(e) => onChange(type === 'file' ? e : e.target.value)}
                 value={value}
                 label={labelType}
@@ -90,7 +87,7 @@ const CustomInput = ({
                     ...adornment,
                     inputProps: { min: 0 },
                 }}
-                inputMode={type === 'number' && restrictNegative ? 'numeric' : null}
+                inputMode={type === 'number' && restrictNegative ? 'numeric' : undefined}
                 error={error}
                 helperText={helperTextVariable}
                 onInput={
@@ -99,7 +96,7 @@ const CustomInput = ({
                               (e.target.value = Math.max(0, parseInt(e.target.value, RADIX_PARAMETER.DECIMAL))
                                   .toString()
                                   .slice(0, maxLength))
-                        : null
+                        : undefined
                 }
                 classes={{
                     root: 'customRoot',
@@ -107,7 +104,7 @@ const CustomInput = ({
                 disabled={disabled}
                 inputRef={inputRef}
                 bgColor={bgColor}
-                onKeyDown={restrictNegative ? numberInput : null}
+                onKeyDown={restrictNegative ? numberInput : undefined}
                 autoFocus={autoFocus}
                 placeholder={placeholder}
                 onBlur={onBlur}
@@ -132,6 +129,7 @@ CustomInput.defaultProps = {
     restrictNegative: false,
     variant: 'filled',
     required: false,
+    minHeight: false,
 };
 
 export default CustomInput;
