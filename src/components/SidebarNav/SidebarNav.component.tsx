@@ -14,11 +14,11 @@ type SidebarNavCompProps = {
     handleTabChange: (value: tabItem) => void;
     selectedItemIndex: number;
     width: string;
-    orientation?: 'horizontal' | 'vertical';
+    orientation: 'horizontal' | 'vertical';
     sideBarClassName?: string;
     listClassName?: string;
     subListClassName?: string;
-    horizontalWidth?: string;
+    horizontalWidth: string;
 };
 
 function SidebarNavComponent({
@@ -69,5 +69,6 @@ function SidebarNavComponent({
 SidebarNavComponent.defaultProps = {
     width: '300px',
     orientation: 'vertical',
+    horizontalWidth: '100%',
 };
 export default SidebarNavComponent;

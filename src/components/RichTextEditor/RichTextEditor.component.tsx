@@ -27,7 +27,7 @@ const editorConfig = {
     // The editor theme
     theme: RTETheme,
     // Handling of errors during update
-    onError(error) {
+    onError(error: Error) {
         throw error;
     },
     // Any custom nodes go here
@@ -38,7 +38,7 @@ export type EditorProps = {
     placeholder: string;
     maxLength: number;
     initialValueInHtml: string;
-    onChange: (changedValueInHtml: string, simpleText: string) => void;
+    onChange: (changedValueInHtml: string | null, simpleText: string) => void;
     disabled: boolean;
 };
 
@@ -75,10 +75,10 @@ const Editor = ({ initialValueInHtml, onChange, placeholder, maxLength }: Editor
             <StyledRTEContainer>
                 <ToolbarPlugin />
                 <div className="editor-inner">
-                    <StyledRichTextPlugin
+                    {/* <StyledRichTextPlugin
                         contentEditable={<ContentEditable className="editor-input" />}
                         placeholder={<Placeholder placeholder={placeholder} />}
-                    />
+                    /> */}
                     <OnChangePlugin onChange={onLocalChange} />
                     <ListPlugin />
                     <LinkPlugin />
@@ -91,7 +91,7 @@ const Editor = ({ initialValueInHtml, onChange, placeholder, maxLength }: Editor
 };
 Editor.defaultProps = {
     placeholder: 'Type something...',
-    onChange: (html, value) => console.log(html, value),
+    onChange: (html: string, value: string) => console.log(html, value),
     maxLength: 10000,
 };
 

@@ -26,7 +26,7 @@ export interface CustomTooltipProp extends TooltipProps {
         | 'top-start'
         | 'top';
     popperProps?: Partial<PopperProps>;
-    title: NonNullable<React.ReactNode>;
+    title: string;
     bgColor?: string;
     fontColor?: string;
 }

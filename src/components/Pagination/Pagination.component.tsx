@@ -15,8 +15,8 @@ type FormPaginationProps = {
     onChangePagination: (value: number) => void;
     page: number | string;
     menuPlacement: string;
-    color?: string;
-    bgColor?: string;
+    color: string;
+    bgColor: string;
     onChange?: (item: number) => void;
 };
 
@@ -42,8 +42,8 @@ function PaginationNew({
                     value={value}
                     defaultValue={defaultValue}
                     items={items}
-                    onChange={(items: number) => {
-                        onChangeRowLimit(items);
+                    onChange={(items: unknown) => {
+                        onChangeRowLimit(items as number);
                     }}
                     placeholder={value}
                     menuPlacement={menuPlacement}
@@ -51,7 +51,6 @@ function PaginationNew({
                     isSearchable={false}
                     closeMenuOnSelect={true}
                     hideSelectedOptions={false}
-                    onFocus={undefined}
                     onInputChange={() => {}}
                 />
             </StyledropdownContainer>
@@ -68,6 +67,7 @@ function PaginationNew({
 
 PaginationNew.defaultProps = {
     color: Theme.colors.white,
+    bgColor: Theme.colors.primaryBlack,
 };
 
 export default PaginationNew;
