@@ -4,22 +4,22 @@ import { nameToColor } from '../../util/helper';
 import { StyledAvatarContainer, StyledInitialContainer, StyledAvatar } from './Avatar.styled';
 
 type FormLabelProps = {
-    size?: 'small' | 'medium' | 'meadiumlarge' | 'large' | string;
+    size: 'small' | 'medium' | 'meadiumlarge' | 'large' | string;
     url: string;
     title?: string;
     icon?: React.ReactElement;
-    color?: 'primary' | 'secondary';
-    isCustomSize?: boolean;
-    isSquare?: boolean;
-    shouldShowTwoInitials?: boolean;
-    fontSize?: string;
+    color: 'primary' | 'secondary';
+    isCustomSize: boolean;
+    isSquare: boolean;
+    shouldShowTwoInitials: boolean;
+    fontSize: string;
     fontWeight?: string;
-    isTooltip?: boolean;
-    isAvatarColor?: boolean;
+    isTooltip: boolean;
+    isAvatarColor: boolean;
 };
 
 const getNameInitials = (str: string) => {
-    let initials: string;
+    let initials: string = '';
     const fullName = str.split(' ');
     if (fullName && fullName.length) {
         initials = fullName[0].charAt(0);
@@ -28,7 +28,7 @@ const getNameInitials = (str: string) => {
 };
 
 const getTwoNameInitials = (name: string) => {
-    let initials: string;
+    let initials: string = '';
     const fullName = name && name.split(' ');
 
     fullName && fullName.length >= 1
@@ -43,7 +43,7 @@ function AvatarComponent({
     size,
     url,
     title = '',
-    icon = null,
+    icon,
     color,
     isCustomSize,
     isSquare,

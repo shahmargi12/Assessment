@@ -55,7 +55,7 @@ function AccordionComponent({
             <StyledAccordion
                 expanded={closePanel === index}
                 onChange={() => onChangePanel(index)}
-                className={closePanel === index && disable}
+                className={closePanel === index ? disable : ''}
             >
                 <AccordionSummary
                 // expandIcon={<ThemeIcons.DownArrowIcon height={8} width={14} />}

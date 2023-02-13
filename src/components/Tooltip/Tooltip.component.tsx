@@ -1,7 +1,7 @@
 import React from 'react';
 import { TooltipProps } from '@mui/material/Tooltip';
 import { PopperProps } from '@mui/material/Popper';
-import { NonNullable } from '@root/types/comman';
+import { NonNullable } from '../../types/common';
 import StyledTooltip from './Tooltip.styled';
 
 export interface CustomTooltipProp extends TooltipProps {

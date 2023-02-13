@@ -11,11 +11,11 @@ type FormDialogProps = {
     content: JSX.Element;
     onClick: (value: boolean) => void;
     width?: string;
-    height?: string;
+    height: string;
     isShowCloseIcon?: boolean;
     backLayertop?: string;
     headerBg?: boolean;
-    onClose?: MouseEventHandler;
+    onClose: () => void
     outsideClickClose?: boolean;
     extraIcons?: boolean;
     HeaderInfo?: React.ReactNode;
@@ -50,13 +50,13 @@ function DialogComponent({
 }: FormDialogProps): JSX.Element {
     const [open, setOpen] = React.useState(true);
 
-    const handleClose = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const handleClose = () => {
         const closeFlag = outsideClickClose;
 
         if (isShowCloseIcon && closeFlag) {
             setOpen(false);
             onClick && onClick(false);
-            onClose(e);
+            onClose();
         }
     };
 
@@ -142,5 +142,11 @@ function DialogComponent({
         </StyledDialogContainer>
     );
 }
+
+DialogComponent.defaultProps = {
+    height: 'auto',
+    onClose : ()=>{
+        //close event
+    }};
 
 export default DialogComponent;
