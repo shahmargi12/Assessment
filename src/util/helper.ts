@@ -10,7 +10,7 @@ export const PARSE_INT_RADIX = {
 export function nameToColor(username: string) {
     try {
         let hash = 0;
-        for (var i = 0; i < username.length; i++) {
+        for (let i = 0; i < username.length; i++) {
             hash += username.charCodeAt(i);
         }
         hash = hash % BACKGROUND_COLOR_ARRAY.length;
