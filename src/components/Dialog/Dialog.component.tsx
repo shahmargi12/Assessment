@@ -15,7 +15,7 @@ type FormDialogProps = {
     isShowCloseIcon?: boolean;
     backLayertop?: string;
     headerBg?: boolean;
-    onClose: () => void
+    onClose: () => void;
     outsideClickClose?: boolean;
     extraIcons?: boolean;
     HeaderInfo?: React.ReactNode;
@@ -145,8 +145,9 @@ function DialogComponent({
 
 DialogComponent.defaultProps = {
     height: 'auto',
-    onClose : ()=>{
+    onClose: () => {
         //close event
-    }};
+    },
+};
 
 export default DialogComponent;

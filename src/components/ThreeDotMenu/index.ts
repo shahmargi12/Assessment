@@ -1,3 +1,3 @@
-import ThreeDotMenu from "./ThreeDotMenu.component";
+import ThreeDotMenu from './ThreeDotMenu.component';
 
 export default ThreeDotMenu;

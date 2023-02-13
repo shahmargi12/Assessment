@@ -82,6 +82,6 @@ function ConfirmationDialog({
 }
 
 ConfirmationDialog.defaultProps = {
-    width: '555px'
+    width: '555px',
 };
 export default ConfirmationDialog;

@@ -48,8 +48,8 @@ import ThreeDotItemMenu from './components/Menu';
 import MenuWithList from './components/MenuWithList';
 import NoDataFound from './components/NoDataFound';
 import OverflowTip from './components/OverflowTip';
-import Pagination from './components/Pagination';
 import ProgressbarComp from './components/Progressbar';
+import PaginationNew from './components/Pagination';
 import CustomizedLabel from './components/RadioCard';
 import ReadMoreComp from './components/ReadMore';
 import ResumePreviewComponent from './components/ResumePreviewComponent';
@@ -104,8 +104,8 @@ export {
     MenuWithList,
     NoDataFound,
     OverflowTip,
-    Pagination,
     ProgressbarComp,
+    PaginationNew,
     CustomizedLabel,
     ReadMoreComp,
     ResumePreviewComponent,
@@ -114,6 +114,7 @@ export {
     Slider,
     SortBy,
     Switch,
+    SkeletonComponent,
     Tag,
     TabComponent,
     TextArea,
