@@ -10,9 +10,9 @@ export type ItemType = {
     value: string;
     type?: 'INPUT' | 'INPUT_TWIN';
     inputProps?: InputCompProps;
-    inputTwinProps1?: InputType;
-    inputTwinProps2?: InputType;
-    twinDivider?: ReactElement;
+    inputTwinProps1: InputType;
+    inputTwinProps2: InputType;
+    twinDivider: ReactElement;
     inputTwinValue?: ValueType;
 };
 
@@ -22,11 +22,12 @@ type DropdownWithInputType = {
     items: ItemType[];
     onChange: (item: ItemType, val: ValueType | string) => void;
     dropdownValue: ItemType;
-    inputValue?: string | ValueType;
+    inputValue: string | ValueType;
     dropdownWidth: string;
     inputWidth: string;
-    dropdownPlaceholder?: string;
+    dropdownPlaceholder: string;
     dropdownLabel?: string;
+    placeholder?: string;
 };
 
 const DropdownWithInput = ({
@@ -50,7 +51,7 @@ const DropdownWithInput = ({
         onChange(currentItem, inputValue);
     };
 
-    const handleDropdownChange = (value) => {
+    const handleDropdownChange = (value: ItemType) => {
         const currentItem = value;
         onChange(currentItem, '');
     };
@@ -71,7 +72,7 @@ const DropdownWithInput = ({
                 <DropdownSelect
                     hideSelectedOptions={false}
                     isMulti={false}
-                    onChange={(val) => {
+                    onChange={(val: ItemType) => {
                         handleDropdownChange(val);
                     }}
                     items={items}
@@ -99,14 +100,18 @@ const DropdownWithInput = ({
                         <CustomInput
                             {...selectedItem?.inputProps}
                             id="input"
-                            value={typeof inputValue === 'string' && inputValue}
-                            onChange={(val: string) => handleOnChange(dropdownValue, val)}
+                            value={typeof inputValue === 'string' ? inputValue : ''}
+                            onChange={(val) => handleOnChange(dropdownValue, val as string)}
                         />
                     )}
                 </div>
             ) : null}
         </StyleDropdownWithInput>
     );
+};
+
+DropdownWithInput.defaultProps = {
+    dropdownPlaceholder: '',
 };
 
 export default DropdownWithInput;

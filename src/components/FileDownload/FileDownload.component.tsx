@@ -12,8 +12,8 @@ import {
 
 type FileDownloadProps = {
     resumeLabel: string;
-    fileUrl?: string;
-    fileName?: string;
+    fileUrl: string;
+    fileName: string;
     isLoading: boolean;
     onDelete: MouseEventHandler;
     preview?: boolean;
@@ -27,7 +27,7 @@ const FileDownloadComp = ({
     onDelete,
     preview,
 }: FileDownloadProps): JSX.Element => {
-    const [uploadFileName, setUploadFileName] = useState([]);
+    const [uploadFileName, setUploadFileName] = useState<string[]>([]);
 
     const download = (file_url: string, file_name: string) => {
         if (file_url) {
@@ -87,6 +87,8 @@ const FileDownloadComp = ({
 
 FileDownloadComp.defaultProps = {
     preview: false,
+    fileUrl: '',
+    fileName: '',
 };
 
 export default FileDownloadComp;

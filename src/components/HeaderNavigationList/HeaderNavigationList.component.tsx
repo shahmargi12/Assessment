@@ -43,7 +43,7 @@ const HeaderNavigationList = ({ menus, onClick }: HeaderNavigationListProps): JS
                                 <>
                                     <Icons.RightArrowIcon />
                                     <div className="subHeader">
-                                        {menu.subItem.map((subMenuItem) => {
+                                        {menu.subItem?.map((subMenuItem) => {
                                             return (
                                                 <button
                                                     className="headerItem"

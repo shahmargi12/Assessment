@@ -27,7 +27,7 @@ type FormFileUploadProps = {
     isAllowUploadFile: boolean;
     parentFileName?: string;
     errorMsgPosition?: boolean;
-    resetParentState?: (shouldReset: boolean) => void;
+    resetParentState: (shouldReset: boolean) => void;
 };
 
 type Labels = {
@@ -82,11 +82,13 @@ function FileUploadComponent({
             setError(fileSize.message);
         }
 
-        if (event.target) event.target.value = null;
+        if (event && event.target) {
+            event.target.value = '';
+        }
     };
 
     const onDeleteFile = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        setFileUrl(null);
+        setFileUrl('');
         onDelete(event);
     };
 
@@ -120,7 +122,11 @@ function FileUploadComponent({
                         <div>
                             <input
                                 type="file"
-                                onChange={(event) => onFileChange(event.target.files[0], event)}
+                                onChange={(event) => {
+                                    if(event.target.files){
+                                        onFileChange(event.target.files[0], event)
+                                    }
+                                }}
                                 id={id}
                                 hidden
                                 accept={mimeType}

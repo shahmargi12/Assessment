@@ -23,9 +23,9 @@ type FormFileDropWithUploadProps = {
     fileSize: FileSizeType;
     isError?: boolean;
     errorMsg?: string;
-    removeBrowseImage?: boolean;
+    removeBrowseImage: boolean;
     isAllowUploadImage: boolean;
-    isRoundShape?: boolean;
+    isRoundShape: boolean;
     placeholderIcon?: JSX.Element;
     shouldAppendDateTime?: boolean;
     resetCounter?: number;
@@ -48,12 +48,12 @@ function FileDropWithUploadComponent({
     imagePreviewClassName,
     ...otherProps
 }: FormFileDropWithUploadProps): JSX.Element {
-    const [imageUrl, setImageUrl] = useState<string>();
+    const [imageUrl, setImageUrl] = useState<string | null>();
     const [removeImage, setRemoveImage] = useState<boolean>(removeBrowseImage);
     const [error, setError] = useState<string>('');
 
     const onUploadFile = (id: string) => {
-        document.getElementById(id).click();
+        document.getElementById(id)?.click();
     };
 
     useEffect(() => {
@@ -94,7 +94,9 @@ function FileDropWithUploadComponent({
             setError(fileSize.message);
             getAlert('error', fileSize.message);
         }
-        if (event && event.target) event.target.value = null;
+        if (event && event.target) {
+            event.target.value = '';
+        }
     };
 
     const onDeleteFile = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -126,7 +128,11 @@ function FileDropWithUploadComponent({
                 <h6>
                     <input
                         type="file"
-                        onChange={(event) => onFileChange(event.target.files[0], event)}
+                        onChange={(event) => {
+                            if(event.target.files){
+                                onFileChange(event.target.files[0], event)
+                            }
+                        }}
                         id="uploadImg"
                         hidden
                         accept={mimeType}
@@ -145,7 +151,7 @@ function FileDropWithUploadComponent({
                     ) : (
                         <div>
                             <button type="button" className="upload-icon" onClick={() => onUploadFile('uploadImg')}>
-                                <Icons.CameraIcon fill={Theme.colors.white} />
+                                <Icons.Camera fill={Theme.colors.white} />
                             </button>
                         </div>
                     )}

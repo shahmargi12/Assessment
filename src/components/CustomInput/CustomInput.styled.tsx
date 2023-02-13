@@ -7,7 +7,7 @@ interface StatusLabelsProps {
 }
 
 type MinHeightProps = {
-    minHeight: boolean;
+    minHeight?: boolean;
 };
 
 export const StyledInput = styled(TextField)<StatusLabelsProps>`

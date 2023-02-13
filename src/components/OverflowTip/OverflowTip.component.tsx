@@ -12,10 +12,18 @@ const OverflowTipComponent = ({ children, title }: OverflowTipProp): JSX.Element
     const child = React.cloneElement(children, { ref: elementRef });
 
     useEffect(() => {
+        let interval: string | number | NodeJS.Timeout | undefined;
         if (elementRef.current) {
-            setIsOverflow(elementRef.current.scrollWidth >= elementRef.current.clientWidth);
+            interval = setTimeout(() => {
+                setIsOverflow(elementRef.current!.scrollWidth > elementRef.current!.clientWidth);
+            }, 500);
         }
-    }, [isOverflow]);
+        return () => {
+            if (elementRef && elementRef.current) {
+                clearTimeout(interval);
+            }
+        };
+    }, [child, elementRef?.current?.clientWidth]);
 
     return (
         <Tooltip title={title} disableHoverListener={!isOverflow}>
