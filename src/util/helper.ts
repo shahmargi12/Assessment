@@ -1,4 +1,5 @@
 import { BACKGROUND_COLOR_ARRAY } from './constant';
+import REGEX from './Regex';
 
 export const PARSE_INT_RADIX = {
     BINARY: 2,
@@ -23,5 +24,45 @@ export function nameToColor(username: string) {
 export const numberInput = (e) => {
     if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.' || e.key === 'E') {
         e.preventDefault();
+    }
+};
+
+export const isEmptyValue = (value) => {
+    try {
+        if (value === null || value === undefined) {
+            return true;
+        } else if (typeof value === 'string' && value === '') {
+            return true;
+        } else if (Array.isArray(value) && value.length === 0) {
+            return true;
+        } else if (value.constructor === Object && Object.entries(value).length === 0) {
+            return true;
+        }
+        return false;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const getTextLength = (text: string) => {
+    if (text) {
+        const convertedText = text.replace(REGEX.CRLF, ' ');
+        const textLength = convertedText.length;
+        return textLength;
+    } else {
+        return 0;
+    }
+};
+
+export const getInitials = (str: string) => {
+    if (str) {
+        const matches = str
+            .match(/\b(\w)/g)
+            .join('')
+            .tsoUpperCase()
+            .slice(0, 2);
+        return matches;
+    } else {
+        return '';
     }
 };

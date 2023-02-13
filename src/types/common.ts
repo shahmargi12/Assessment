@@ -1,3 +1,5 @@
+export type NonNullable<T> = T extends null | undefined ? never : T;
+
 export type IconType = ColorType & {
     width: number;
     height: number;
@@ -11,9 +13,6 @@ export type ColorType = {
     fill2?: string;
     ribbon?: string;
 };
-
-export type NonNullable<T> = T extends null | undefined ? never : T;
-
 export type Item = {
     label: string;
     value: string;
