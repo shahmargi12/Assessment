@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 interface StatusLabelsProps {
     bgColor: string;
-    padding: string;
     onBlur?: () => void;
 }
 
