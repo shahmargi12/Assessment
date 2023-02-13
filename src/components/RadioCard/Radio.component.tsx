@@ -11,7 +11,7 @@ type RadioItem = {
     disabled?: boolean;
     isTooltip?: boolean;
     tooltipText?: string;
-    title?: string;
+    title: string;
     hint?: string;
 };
 
@@ -48,7 +48,7 @@ const CustomizedLabel = ({ label, isTooltip, tooltipText, title, hint }: Partial
             <p>
                 {label}
                 {isTooltip && (
-                    <Tooltip placement="right" title={tooltipText}>
+                    <Tooltip placement="right" title={tooltipText!}>
                         <span className="tooltipIcon">
                             <Icons.InfoIcon height={17} width={17} />
                         </span>
@@ -102,7 +102,7 @@ function RadioComp({
                         <CustomizedLabel
                             label={item.label}
                             isTooltip={item.isTooltip}
-                            tooltipText={item.tooltipText}
+                            tooltipText={item.tooltipText ? item.tooltipText : ''}
                             title={item.title}
                             hint={item.hint}
                         />

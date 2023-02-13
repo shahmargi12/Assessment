@@ -13,12 +13,12 @@ type ResumePreviewProps = {
     pageNumber: number;
     showAllPages?: boolean;
     pdfScale?: number;
-    loader?: ReactElement;
-    fixHeight?: boolean;
+    loader?: any;
+    fixHeight: boolean;
     topElement?: ReactElement;
     bottomElement?: ReactElement;
     enlargeIconVisible?: boolean;
-    onEnlargeIconClick?: () => void;
+    onEnlargeIconClick: () => void;
 };
 
 const ResumePreviewComponent = ({
@@ -34,14 +34,14 @@ const ResumePreviewComponent = ({
     enlargeIconVisible,
     onEnlargeIconClick,
 }: ResumePreviewProps): JSX.Element => {
-    const [numPages, setNumPages] = useState(null);
+    const [numPages, setNumPages] = useState<number | boolean>(false);
     const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
     useEffect(() => {
         setCurrentPageNumber(pageNumber);
     }, [pageNumber]);
 
-    function onDocumentLoadSuccess({ numPages }) {
+    function onDocumentLoadSuccess() {
         setNumPages(numPages);
         if (onLoadSuccess) {
             onLoadSuccess(numPages);
@@ -84,7 +84,7 @@ const ResumePreviewComponent = ({
                     </div>
                 ) : null}
             </div>
-            {numPages ? bottomElement : null}
+            {numPages ? bottomElement : ''}
         </StyledResumePreview>
     );
 };

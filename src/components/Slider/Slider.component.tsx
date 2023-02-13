@@ -2,13 +2,13 @@ import React from 'react';
 import { StyledCardContainer, StyledCardWithoutCustomCss } from './Slider.styled';
 
 type SliderProp = {
-    children: React.ReactNode;
+    children: JSX.Element;
     dots?: boolean;
     infinite?: boolean;
     speed?: number;
     slidesToShow: number;
     slidesToScroll?: number;
-    minWidth?: number;
+    minWidth?: string;
     useWithoutCustomCss?: boolean;
     responsive?: { breakpoint: number; settings: { slidesToShow: number } }[];
     autoplay: boolean;
@@ -28,7 +28,6 @@ const Slider = ({
     useWithoutCustomCss,
     responsive,
     autoplay,
-    alignLeft,
 }: SliderProp): JSX.Element => {
     const SliderComponent = useWithoutCustomCss ? StyledCardWithoutCustomCss : StyledCardContainer;
     return (
@@ -41,7 +40,6 @@ const Slider = ({
             width={minWidth}
             autoplay={autoplay}
             responsive={responsive}
-            alignLeft={alignLeft}
             swipeToSlide={swipeToSlide}
         >
             {children}
@@ -55,7 +53,7 @@ Slider.defaultProps = {
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    useWithoutCustomCss: false,
+    useWithoutCnumberustomCss: false,
     autoplay: false,
 };
 

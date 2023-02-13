@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 type SliderProps = {
-    width: string;
+    width?: string;
 };
 export const StyledCardContainer = styled(Slider)<SliderProps>`
     display: flex;
