@@ -2,7 +2,7 @@ import React from 'react';
 import Avatar from '../Avatar';
 import Tooltip from '../Tooltip';
 import Button from '../Button';
-// import ThemeIcons from '@foster/ThemeIcons';
+import Icons from '../../Icons';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
@@ -57,9 +57,7 @@ function AccordionComponent({
                 onChange={() => onChangePanel(index)}
                 className={closePanel === index ? disable : ''}
             >
-                <AccordionSummary
-                // expandIcon={<ThemeIcons.DownArrowIcon height={8} width={14} />}
-                >
+                <AccordionSummary expandIcon={<Icons.DownArrowIcon height={8} width={14} />}>
                     <StyledAccordionTypography className="email-address-cell">
                         <div className="userNameChar">
                             <Avatar

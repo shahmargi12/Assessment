@@ -1,7 +1,7 @@
 import React from 'react';
 import Chip, { ChipProps } from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-// import ThemeIcons from '@foster/ThemeIcons';
+import Icons from '../../Icons';
 import { StyleChipsContainer, StyledIcon } from './Chips.styled';
 
 type ChipsProps = {
@@ -11,7 +11,11 @@ type ChipsProps = {
 };
 
 const MySVGComponent = (props: ChipProps['deleteIcon']): JSX.Element => {
-    return <StyledIcon {...props}>{/* <ThemeIcons.CloseIcon height={10} width={10} /> */}</StyledIcon>;
+    return (
+        <StyledIcon {...props}>
+            <Icons.CloseIcon height={10} width={10} />
+        </StyledIcon>
+    );
 };
 
 function ChipsComponent({ label, variant, onDelete }: ChipsProps): JSX.Element {

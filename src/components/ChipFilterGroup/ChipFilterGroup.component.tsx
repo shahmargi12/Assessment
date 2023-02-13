@@ -1,7 +1,7 @@
 import { Divider, Stack } from '@mui/material';
 import React, { useMemo } from 'react';
 import ChipsComponent from '../Chips';
-// import ThemeIcons from '@foster/ThemeIcons';
+import Icons from '../../Icons';
 import {
     StyledListItemIcon,
     StyledListItemText,
@@ -79,7 +79,7 @@ function ChipFilterGroup({ chipsData, displayCount = 5, onDelete, onClearAll }: 
                             <StyledMenuItem disableRipple disableTouchRipple key={chip.id}>
                                 <StyledListItemText>{chip.label}</StyledListItemText>
                                 <StyledListItemIcon onClick={() => handleOnDelete(chip)}>
-                                    {/* <ThemeIcons.CloseIcon /> */}
+                                    <Icons.CloseIcon />
                                 </StyledListItemIcon>
                             </StyledMenuItem>
                         ))}
