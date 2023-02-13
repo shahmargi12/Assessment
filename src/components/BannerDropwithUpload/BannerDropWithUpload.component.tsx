@@ -1,7 +1,7 @@
 import React, { useState, MouseEventHandler } from 'react';
 import { getAlert } from '../../hooks';
 import { Theme } from '../../theme/default';
-// import ThemeIcons from '@foster/ThemeIcons';
+import Icons from '../../Icons';
 import {
     StyledBannerDropWithUploadContainer,
     StyledFileDropWithUploadMainSection,
@@ -107,21 +107,23 @@ function BannerDropWithUploadComponent({
                 {...otherProps}
                 allowUploadImage={isAllowUploadBanner}
                 bgImg={bgImgUrl}
-                onDrop={(files, event) => onBannerChange(files, 'dragFile', event)}
+                onDrop={(files: FileList, event: React.ChangeEvent<HTMLInputElement>) =>
+                    onBannerChange(files, 'dragFile', event)
+                }
                 bannerError={bannerError}
             >
                 {removeImage && bannerImgSrc ? (
                     <>
                         <div className="image-circle">
                             <button type="button" onClick={onDeleteFile}>
-                                {/* <ThemeIcons.DeleteBannerIcon height={32} width={32} /> */}
+                                <Icons.DeleteBannerIcon height={32} width={32} />
                             </button>
                             <img src={`${bannerImgSrc}`} alt="" />
                         </div>
 
                         <StyleEditBannerBtn>
                             <button type="button" onClick={() => onUploadBanner('uploadBanner')}>
-                                {/* <ThemeIcons.UpdateIcon height={32} width={32} /> */}
+                                <Icons.UpdateIcon height={32} width={32} />
                             </button>
                         </StyleEditBannerBtn>
                     </>
@@ -129,14 +131,14 @@ function BannerDropWithUploadComponent({
                     <>
                         <div className="image-circle">
                             <button type="button" onClick={onDeleteFile}>
-                                {/* <ThemeIcons.DeleteBannerIcon height={32} width={32} /> */}
+                                <Icons.DeleteBannerIcon height={32} width={32} />
                             </button>
                             <img src={`${bannerImageUrl}`} alt="" />
                         </div>
 
                         <StyleEditBannerBtn>
                             <button type="button" onClick={() => onUploadBanner('uploadBanner')}>
-                                {/* <ThemeIcons.UpdateIcon height={32} width={32} /> */}
+                                <Icons.UpdateIcon height={32} width={32} />
                             </button>
                         </StyleEditBannerBtn>
                     </>
@@ -144,12 +146,12 @@ function BannerDropWithUploadComponent({
                     <>
                         <StyleBannerButton>
                             <StyledBannerAvatarContainer fColor={forColor}>
-                                {/* <ThemeIcons.UploadCloudIcon
-                  height={35}
-                  width={35}
-                  fill1={Theme.colors.primaryBlack30}
-                  fill2={Theme.colors.primaryBlack}
-                /> */}
+                                <Icons.UploadCloudIcon
+                                    height={35}
+                                    width={35}
+                                    fill1={Theme.colors.primaryBlack30}
+                                    fill2={Theme.colors.primaryBlack}
+                                />
                             </StyledBannerAvatarContainer>
                             <button type="button" onClick={() => onUploadBanner('uploadBanner')}>
                                 {labels.mainLabel && <p>{labels.mainLabel}</p>}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ClickAwayListener } from '@mui/material';
 import { Theme } from '../../theme/default';
-// import ThemeIcons from '@foster/ThemeIcons';
+import Icons from '../../Icons';
 import Checkbox from '../Checkbox';
 import {
     StyledDropDownSelector,
@@ -10,7 +10,7 @@ import {
     StyledErrorContainer,
 } from './AlphabeticalDropdown.styled';
 import IconButton from '../IconButton';
-import { CatchErrorType } from '../../types/comman';
+import { CatchErrorType } from '../../types/common';
 
 type ItemProps = {
     label: string;
@@ -91,7 +91,7 @@ const AlphabeticalDropdown = ({
     const [searchString, setSearchString] = useState<string>('');
     const [allItems, setAllItems] = useState<Record<string, ItemProps[]>>({});
     const [isLoading, setLoading] = useState(false);
-    const [selectedValues, setSelectedValues] = useState({});
+    const [selectedValues, setSelectedValues] = useState<Record<string, boolean>>({});
     const [isAllOptionSelected, setIsAllOptionSelected] = useState(false);
 
     useEffect(() => {
@@ -105,7 +105,7 @@ const AlphabeticalDropdown = ({
 
     useEffect(() => {
         if (value && Array.isArray(value)) {
-            const selectedObjects = {};
+            const selectedObjects: Record<string, boolean> = {};
             value.forEach((item) => {
                 selectedObjects[item.value] = true;
             });
@@ -154,13 +154,13 @@ const AlphabeticalDropdown = ({
                 prepareItems();
             }
         } else {
-            searchApiCall(searchString)
-                .then((response) => {
-                    if (response && response.options) {
-                        prepareItems(response.options);
-                    }
-                })
-                .catch((error: CatchErrorType) => console.error(error));
+            // searchApiCall(searchString)
+            //     .then((response) => {
+            //         if (response && response.options) {
+            //             prepareItems(response.options);
+            //         }
+            //     })
+            //     .catch((error: CatchErrorType) => console.error(error));
         }
     }, [searchString]);
 
@@ -215,7 +215,7 @@ const AlphabeticalDropdown = ({
         Object.keys(items).forEach((item) => {
             totalItem += items[item].length;
         });
-        if (value.length === totalItem && totalItem > 0) {
+        if (value?.length === totalItem && totalItem > 0) {
             setIsAllOptionSelected(true);
         } else {
             setIsAllOptionSelected(false);
@@ -259,11 +259,7 @@ const AlphabeticalDropdown = ({
                         </div>
                         <div className="rightSelector">
                             <div className={`${toggleDropdown ? 'downIconTransition' : ''} downIcon`}>
-                                {/* <ThemeIcons.DownArrowIcon
-                  width={14}
-                  height={8}
-                  opacity="none"
-                /> */}
+                                <Icons.DownArrowIcon width={14} height={8} opacity="none" />
                             </div>
                         </div>
                     </div>
@@ -272,7 +268,7 @@ const AlphabeticalDropdown = ({
                         <StyledDropdown width={width} dropdownPosition={dropdownPosition}>
                             <div className="dropdownHeader">
                                 <div className="searchContainer">
-                                    {/* <ThemeIcons.SearchIcon fill={Theme.colors.primaryBlack20} /> */}
+                                    <Icons.SearchIcon fill={Theme.colors.primaryBlack20} />
                                     <input
                                         value={searchString}
                                         placeholder="Search"
@@ -322,10 +318,7 @@ const AlphabeticalDropdown = ({
                                             setToggleDropdown(false);
                                         }}
                                     >
-                                        {/* <ThemeIcons.CloseIcon
-                      fill={Theme.colors.primaryBlack40}
-                      opacity="none"
-                    /> */}
+                                        <Icons.CloseIcon fill={Theme.colors.primaryBlack40} opacity="none" />
                                     </IconButton>
                                 </div>
                             </div>

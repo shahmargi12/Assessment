@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { toast, ToastPosition, ToastBody, Slide, ToastCloseIcon } from './../components';
+import { toast, ToastPosition, ToastBody, Slide, ToastCloseIcon } from './../components/Alert';
 
 const useAlert = (
     type: 'info' | 'error' | 'success' | 'warning' = 'info',
