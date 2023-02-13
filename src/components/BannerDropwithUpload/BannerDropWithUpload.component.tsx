@@ -107,7 +107,9 @@ function BannerDropWithUploadComponent({
                 {...otherProps}
                 allowUploadImage={isAllowUploadBanner}
                 bgImg={bgImgUrl}
-                onDrop={(files, event) => onBannerChange(files, 'dragFile', event)}
+                onDrop={(files: FileList, event: React.ChangeEvent<HTMLInputElement>) =>
+                    onBannerChange(files, 'dragFile', event)
+                }
                 bannerError={bannerError}
             >
                 {removeImage && bannerImgSrc ? (
