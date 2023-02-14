@@ -17,7 +17,7 @@ type InputComponentProps = {
     defaultValue?: unknown;
     textCount?: boolean;
     labelType: string;
-    variant?: 'outlined' | 'standard' | 'filled';
+    variant: 'filled';
     required?: boolean;
 };
 
@@ -42,7 +42,7 @@ function TextArea({
         handleTextCount(value);
     }, [value]);
 
-    const handleTextCount = debounce((value) => {
+    const handleTextCount = debounce((value: string) => {
         const textLength = getTextLength(value);
         setCount(textLength);
     }, TIMEOUT.DELAY_700);

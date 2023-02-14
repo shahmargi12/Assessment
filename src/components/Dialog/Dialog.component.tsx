@@ -80,7 +80,7 @@ function DialogComponent({
                                             <h2>{header.title}</h2>
 
                                             {HeaderInfo && (
-                                                <Tooltip title={HeaderInfo}>
+                                                <Tooltip title={''}>
                                                     <Icons.InfoIcon fill={Theme.colors.black} />
                                                 </Tooltip>
                                             )}

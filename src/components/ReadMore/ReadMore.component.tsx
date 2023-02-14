@@ -51,7 +51,7 @@ function ReadMoreComponent({ text, limit, color, onClickMore, isDialog }: ReadMo
 ReadMoreComponent.defaultProps = {
     color: '#4a4a48',
     isDialog: false,
-    onClickMore: () => {}
+    onClickMore: () => {},
 };
 
 export default ReadMoreComponent;
