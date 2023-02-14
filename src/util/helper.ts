@@ -51,11 +51,11 @@ export const isEmptyValue = (value) => {
 export const getTextLength = (text: string) => {
     if (text) {
         const convertedText = text.replace(REGEX.CRLF, ' ');
-        const textLength = convertedText.length;
+        const textLength = convertedText.length();
         return textLength;
-    } else {
+    } 
         return 0;
-    }
+    
 };
 
 export const getInitials = (str: string) => {

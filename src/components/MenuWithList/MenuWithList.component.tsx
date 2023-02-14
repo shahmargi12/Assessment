@@ -11,15 +11,15 @@ import IconButton from '../IconButton';
 
 type CheckboxItem = {
     label: string;
-    value: string | number;
+    value: string;
 };
 
 export type MenuWithListProp = {
     items: CheckboxItem[];
     onChange: (e: ChangeEvent, item: CheckboxItem, index: number) => void;
-    checkedObj: CheckboxItem;
+    checkedObj: Record<string, CheckboxItem>;
     closeFilter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-    defaultType?: 'label' | 'value';
+    defaultType: 'label' | 'value';
 };
 
 const MenuWithList = ({ items, onChange, checkedObj, closeFilter, defaultType }: MenuWithListProp): JSX.Element => {

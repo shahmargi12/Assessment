@@ -23,21 +23,22 @@ export type MenuItemType = {
     canAccess: boolean;
     width?: string;
     disabled?: boolean;
-    tooltip?: string;
+    tooltip: string;
     className?: string;
+    title: string;
 };
 
 export type SimpleMenuProps = {
     items: MenuItemType[];
     selectedItem?: MenuItemType | undefined;
-    onItemClick: (item: MenuItemType, e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
+    onItemClick: (item?: MenuItemType, e?: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
     iconDir: 'horizontal' | 'vertical';
     icon?: JSX.Element;
     selector?: SelectorType;
     variant?: 'text' | 'outlined' | 'contained';
     className?: string;
     iconClassName?: string;
-    width?: string;
+    width: string;
 };
 const ThreeDotMenu = ({
     items,
@@ -51,7 +52,7 @@ const ThreeDotMenu = ({
     className,
     iconClassName,
 }: SimpleMenuProps): JSX.Element => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
     const open = Boolean(anchorEl);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -162,5 +163,6 @@ const ThreeDotMenu = ({
 ThreeDotMenu.defaultProps = {
     items: options,
     iconDir: 'vertical',
+    width: 'fit-content',
 };
 export default ThreeDotMenu;

@@ -16,7 +16,7 @@ type ManageDropdownProps = {
     noOptionsMessage?: string;
     isSearchable: boolean;
     value: ManageDropdownItems | undefined;
-    onChange?: (item: ManageDropdownItems, actionMeta: ActionMeta<ManageDropdownItems>) => void;
+    onChange?: (item: unknown, actionMeta: ActionMeta<unknown>) => void;
     closeMenuOnSelect: boolean;
     hideSelectedOptions: boolean;
     isLoading?: boolean;
@@ -72,10 +72,10 @@ const ManageDropdown = ({
             isSearchable={isSearchable}
             classNamePrefix="react-select"
             menuIsOpen={menuIsOpen}
-            components={{ SingleValue }}
+            // components={{ SingleValue }}
             hideSelectedOptions={hideSelectedOptions}
             isLoading={isLoading}
-            formatOptionLabel={formatOptionLabel}
+            // formatOptionLabel={formatOptionLabel}
             blurInputOnSelect={blurInputOnSelect}
             onChange={onChange}
         />

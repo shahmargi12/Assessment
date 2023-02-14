@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ThreeDotMenu from './ThreeDotMenu.component';
 export default {
-    title: 'Menu/Simple',
+    title: 'ThreeDotMenu',
     component: ThreeDotMenu,
     argTypes: {},
 } as ComponentMeta<typeof ThreeDotMenu>;

@@ -8,7 +8,7 @@ export type CustomizedSwitchesProp = {
     shouldShowLabel?: boolean;
     shouldShowFixedLabel?: boolean;
     fixedLabel?: string;
-    disabled?: boolean;
+    disabled: boolean;
 };
 
 function CustomizedSwitches({

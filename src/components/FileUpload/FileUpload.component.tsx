@@ -123,8 +123,8 @@ function FileUploadComponent({
                             <input
                                 type="file"
                                 onChange={(event) => {
-                                    if(event.target.files){
-                                        onFileChange(event.target.files[0], event)
+                                    if (event.target.files) {
+                                        onFileChange(event.target.files[0], event);
                                     }
                                 }}
                                 id={id}

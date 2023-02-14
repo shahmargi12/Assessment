@@ -18,7 +18,7 @@ export const StyledTag = styled.div<TagProp>`
     border-radius: 12px;
     font-size: ${({ theme, size }) => {
         if (size === 'medium') return '1.4rem';
-        return theme.fontSize.cardTitle.small;
+        return '1rem';
     }};
     background-color: ${({ theme, type }) => {
         if (type === 'worse') return theme.colors.alertColors.error.primary;

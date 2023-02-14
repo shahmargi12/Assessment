@@ -11,7 +11,7 @@ type RadioItem = {
     disabled?: boolean;
     isTooltip?: boolean;
     tooltipText?: string;
-    title: string;
+    title?: string;
     hint?: string;
 };
 

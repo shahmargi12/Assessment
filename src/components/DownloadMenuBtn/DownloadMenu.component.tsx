@@ -20,6 +20,7 @@ type ItemType = {
     Top: boolean;
     bottom: boolean;
     disabled?: boolean;
+    title: string;
 };
 
 type ExportDataType = {
