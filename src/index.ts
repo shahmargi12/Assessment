@@ -13,7 +13,7 @@ import Button from './components/Button';
 import Checkbox from './components/Checkbox';
 import IconButton from './components/IconButton';
 import CheckboxGroup from './components/CheckboxGroup';
-import ChipsComponent from './components/Chips';
+import Chips from './components/Chips';
 import ChipFilterGroup from './components/ChipFilterGroup';
 import CircularLoader from './components/CircularLoader';
 import Collapse from './components/Collapse';
@@ -26,12 +26,12 @@ import Drawer from './components/Drawer';
 import DropdownTheme from './components/DropdownTheme/DropdownTheme.component';
 import DropdownThemeChips from './components/DropdownThemeChips';
 import DropdownWithInput from './components/DropdownWithInput';
-import FileDownloadComp from './components/FileDownload';
+import FileDownload from './components/FileDownload';
 import FileDropWithUpload from './components/FileDropWithUpload';
 import FilePreview from './components/FilePreview/FilePreview.component';
-import FileUploadComponent from './components/FileUpload';
+import FileUpload from './components/FileUpload';
 import FiltersSkeleton from './components/FiltersSkeleton';
-import FormStepperComponent from './components/FormStepper';
+import FormStepper from './components/FormStepper';
 import FullPageError from './components/FullPageError';
 import GlobalStyleWrapper from './components/GlobalStyleWrapper';
 import Grid from './components/Grid';
@@ -48,28 +48,30 @@ import ThreeDotItemMenu from './components/Menu';
 import MenuWithList from './components/MenuWithList';
 import NoDataFound from './components/NoDataFound';
 import OverflowTip from './components/OverflowTip';
-import ProgressbarComp from './components/Progressbar';
+import Progressbar from './components/Progressbar';
 import PaginationNew from './components/Pagination';
-import CustomizedLabel from './components/RadioCard';
+import Radio from './components/RadioCard';
 import ReadMoreComp from './components/ReadMore';
 import ResumePreviewComponent from './components/ResumePreviewComponent';
 import RichTextEditor from './components/RichTextEditor';
 import SidebarNav from './components/SidebarNav';
-import SkeletonComponent from './components/Skeleton';
+import Skeleton from './components/Skeleton';
 import Slider from './components/Slider';
 import SortBy from './components/SortByBtn';
 import Switch from './components/Switch';
 import Tag from './components/Tag';
-import TabComponent from './components/Tab';
+import Tab from './components/Tab';
 import TextArea from './components/TextArea';
 import ToggleSwitch from './components/ToggleSwitch';
+import Tooltip from './components/Tooltip';
+import ThreeDotMenu from './components/ThreeDotMenu';
 
 export {
     CustomInput,
     ConfirmationDialog,
     Collapse,
     CircularLoader,
-    ChipsComponent,
+    Chips,
     ChipFilterGroup,
     CheckboxGroup,
     Checkbox,
@@ -80,12 +82,12 @@ export {
     DropdownTheme,
     DropdownWithInput,
     DropdownThemeChips,
-    FileDownloadComp,
+    FileDownload,
     FileDropWithUpload,
     FilePreview,
-    FileUploadComponent,
+    FileUpload,
     FiltersSkeleton,
-    FormStepperComponent,
+    FormStepper,
     FullPageError,
     Alert,
     Button,
@@ -104,9 +106,9 @@ export {
     MenuWithList,
     NoDataFound,
     OverflowTip,
-    ProgressbarComp,
+    Progressbar,
     PaginationNew,
-    CustomizedLabel,
+    Radio,
     ReadMoreComp,
     ResumePreviewComponent,
     RichTextEditor,
@@ -114,9 +116,9 @@ export {
     Slider,
     SortBy,
     Switch,
-    SkeletonComponent,
+    Skeleton,
     Tag,
-    TabComponent,
+    Tab,
     TextArea,
     ToggleSwitch,
     Accordion,
@@ -128,4 +130,6 @@ export {
     Slide,
     Avatar,
     AlphabeticalDropdown,
+    Tooltip,
+    ThreeDotMenu,
 };

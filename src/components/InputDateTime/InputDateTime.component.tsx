@@ -9,7 +9,7 @@ import getSeconds from 'date-fns/getSeconds';
 import { StyledRequiredSpan, StyledPlaceholder } from './InputDateTime.styled';
 import '../../../node_modules/rsuite/DateRangePicker/styles/index.less';
 
-type InputDateTimeComponent = {
+type InputDateTimeCompProp = {
     id?: string;
     value: Date;
     handleChange: (value: Date | null, event: SyntheticEvent<Element, Event>) => void;
@@ -33,7 +33,7 @@ const InputDateTimeComponent = ({
     dateValidationType,
     maxDateTime,
     required,
-}: InputDateTimeComponent): JSX.Element => {
+}: InputDateTimeCompProp): JSX.Element => {
     const getDateTimeComparision = (date: Date | undefined): boolean => {
         if (dateValidationType === 'min' && minDateTime && date) {
             if (isSameDay(date, minDateTime)) {
