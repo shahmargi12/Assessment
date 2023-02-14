@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import DatePicker from 'rsuite/DatePicker';
 import getHours from 'date-fns/getHours';
 import isAfter from 'date-fns/isAfter';
@@ -12,7 +12,7 @@ import '../../../node_modules/rsuite/DateRangePicker/styles/index.less';
 type InputDateTimeComponent = {
     id?: string;
     value: Date;
-    handleChange: (value: Date, event: React.SyntheticEvent<Element, Event>) => void;
+    handleChange: (value: Date | null, event: SyntheticEvent<Element, Event>) => void;
     minDateTime?: Date;
     disabled?: boolean;
     placeholder?: string;
@@ -34,23 +34,24 @@ const InputDateTimeComponent = ({
     maxDateTime,
     required,
 }: InputDateTimeComponent): JSX.Element => {
-    const getDateTimeComparision = (date: Date): boolean => {
-        if (dateValidationType === 'min') {
+    const getDateTimeComparision = (date: Date | undefined): boolean => {
+        if (dateValidationType === 'min' && minDateTime && date) {
             if (isSameDay(date, minDateTime)) {
                 return false;
             }
             return isBefore(date, minDateTime);
         }
-        if (dateValidationType === 'max') {
+        if (dateValidationType === 'max' && maxDateTime && date) {
             if (isSameDay(date, maxDateTime)) {
                 return false;
             }
             return isAfter(date, maxDateTime);
         }
+        return true;
     };
 
-    const disabledDateTime = (timeValue, type, date, selectedDate) => {
-        if (isSameDay(date, selectedDate)) {
+    const disabledDateTime = (timeValue: number, type: string, date: Date | undefined, selectedDate: Date): boolean => {
+        if (date && isSameDay(date, selectedDate)) {
             const hr = getHours(date);
             const hrSelectedDate = getHours(selectedDate);
             const mins = getMinutes(date);
@@ -64,9 +65,8 @@ const InputDateTimeComponent = ({
                 case 'second':
                     return hr === hrSelectedDate && mins === minsSelectedDate ? timeValue < seconds : false;
             }
-        } else {
-            return false;
         }
+        return false;
     };
 
     const getPlaceholder = () => {

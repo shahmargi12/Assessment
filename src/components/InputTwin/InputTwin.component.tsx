@@ -4,7 +4,7 @@ import { StyledInputContainer } from './InputTwin.styled';
 export type InputType = {
     placeholder: string;
     type: 'text' | 'number' | 'password' | 'email' | 'file' | 'datetime-local' | 'tel' | 'url';
-    width?: string;
+    width: string;
     readOnly?: boolean;
     disabled?: boolean;
 };
@@ -79,6 +79,18 @@ const InputTwin = ({ onChange, input1, input2, error, divider, value1, value2 }:
             />
         </StyledInputContainer>
     );
+};
+
+InputTwin.defaultProps = {
+    onChange: () => {
+        console.log('onChange');
+    },
+    input1: { placeholder: 'Obtained GPA', type: 'text', width: '120px' },
+    input2: { placeholder: 'Total GPA', type: 'text', width: '120px' },
+    value1: '',
+    value2: '10',
+    error: false,
+    divider: <p>/</p>,
 };
 
 export default InputTwin;

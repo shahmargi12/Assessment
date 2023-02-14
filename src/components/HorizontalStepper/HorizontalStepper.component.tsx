@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import StepContent from '@mui/material/StepContent';
 import {
     StyledHorizontalStepperContainer,
     StyledHorizontalStepperLeftSection,
     StyledHorizontalStepperRightSection,
 } from './HorizontalStepper.styled';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import StepContent from '@mui/material/StepContent';
 
 type HorizontalStepperProps = {
     steps: StepsProps[];

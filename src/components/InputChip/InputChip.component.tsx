@@ -13,13 +13,13 @@ type InputChipPropType = {
     error: boolean;
     id?: string;
     placeholder?: string;
-    validatorFunction?: (email: string, value: string[]) => boolean;
-    validationMessage?: string;
+    validatorFunction: (email: string, value: string[]) => boolean;
+    validationMessage: string;
     allowDuplicateValues?: boolean;
-    duplicateValueValidationMessage?: string;
-    maxLimit?: number;
-    maxLimitMessage?: string;
-    setError?: (error: boolean) => void;
+    duplicateValueValidationMessage: string;
+    maxLimit: number;
+    maxLimitMessage: string;
+    setError: (error: boolean) => void;
 };
 
 const InputChip = ({
@@ -40,7 +40,7 @@ const InputChip = ({
     const [currentValue, setCurrentValue] = useState('');
     const [errorMessage, setErrorMessage] = useState(helperText);
     const [isError, setIsError] = useState(error);
-    const inputElement = useRef();
+    const inputElement = useRef(null);
 
     useEffect(() => {
         setErrorMessage(helperText);
@@ -156,7 +156,7 @@ const InputChip = ({
      * To focus the input whenever use click on component
      */
     const handleFocus = () => {
-        const element = inputElement.current as HTMLElement;
+        const element = inputElement.current as unknown as HTMLElement;
         element.focus();
     };
 
