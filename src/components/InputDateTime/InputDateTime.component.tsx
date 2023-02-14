@@ -47,7 +47,7 @@ const InputDateTimeComponent = ({
             }
             return isAfter(date, maxDateTime);
         }
-        return true;
+        return false;
     };
 
     const disabledDateTime = (timeValue: number, type: string, date: Date | undefined, selectedDate: Date): boolean => {

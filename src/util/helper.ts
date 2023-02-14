@@ -53,8 +53,8 @@ export const getTextLength = (text: string) => {
         const convertedText = text.replace(REGEX.CRLF, ' ');
         const textLength = convertedText.length();
         return textLength;
-    } 
-        return 0;
+    }
+    return 0;
     
 };
 
