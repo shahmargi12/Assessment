@@ -9,6 +9,7 @@ import {
     StyledMenuButton,
     StyledMenuItem,
     StyledResetButton,
+    StyledStack,
 } from './ChipFilterGroup.styled';
 
 interface ChipFilterGroupProp {
@@ -42,7 +43,7 @@ function ChipFilterGroup({ chipsData, displayCount = 5, onDelete, onClearAll }: 
     const handleClearAll = () => onClearAll();
 
     return (
-        <Stack display="flex" direction="row" spacing={2}>
+        <StyledStack>
             {displayedChips.map((data) => (
                 <ChipsComponent
                     label={data.label}
@@ -94,7 +95,7 @@ function ChipFilterGroup({ chipsData, displayCount = 5, onDelete, onClearAll }: 
                     </StyledResetButton>
                 </>
             )}
-        </Stack>
+        </StyledStack>
     );
 }
 

@@ -1,6 +1,22 @@
 import styled from 'styled-components';
 import { Button, ListItemIcon, ListItemText, Menu, MenuItem, Stack } from '@mui/material';
 
+const StyledStack = styled(Stack)`
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 1rem;
+        button {
+            &.MuiButton-root {
+                height: auto;
+            }
+        }
+    }
+`;
+
 const StyledMenuButton = styled(Button)`
     &.MuiButton-root {
         min-width: 39px;
@@ -11,7 +27,7 @@ const StyledMenuButton = styled(Button)`
         font-size: 1.4rem;
         font-weight: 500;
 
-        &:hover: {
+        &:hover {
             background-color: ${({ theme }) => theme.colors.primaryBlack5};
         }
     }
@@ -38,8 +54,8 @@ const StyledListItemText = styled(ListItemText)`
     &.MuiListItemText-root {
         & span {
             font-size: 1.5rem;
-        },
-    },
+        }
+    }
 `;
 
 const StyledListItemIcon = styled(ListItemIcon)`
@@ -64,4 +80,13 @@ const StyledResetButton = styled(Button)`
         }
     }
 `;
-export { StyledMenuButton, StyledMenu, StyledMenuItem, StyledListItemText, StyledListItemIcon, StyledResetButton };
+
+export {
+    StyledMenuButton,
+    StyledMenu,
+    StyledMenuItem,
+    StyledListItemText,
+    StyledListItemIcon,
+    StyledResetButton,
+    StyledStack,
+};
