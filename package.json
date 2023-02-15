@@ -1,6 +1,6 @@
 {
     "name": "@shahmargi12/assess-lib",
-    "version": "0.0.21",
+    "version": "0.0.22",
     "module": "./lib/esm/index.js",
     "types": "lib/index.d.ts",
     "files": [
