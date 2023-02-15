@@ -31,7 +31,7 @@ export const StyleStepperContainer = styled.div<SteperType>`
     }
 
     h2 {
-        font-family: ${({ theme }) => theme.fontFamily.primaryBlack};
+        font-family: ${({ theme }) => theme.fontFamily.secondary};
         color: ${({ theme }) => theme.colors.primaryBlack};
         text-align: left;
         font-size: 2.2rem;
