@@ -1,7 +1,7 @@
 import React from 'react';
 import { TooltipProps } from '@mui/material/Tooltip';
 import { PopperProps } from '@mui/material/Popper';
-import { NonNullable } from './../../types/common';
+import { NonNullable } from '../../types/common';
 import StyledTooltip from './Tooltip.styled';
 
 export interface CustomTooltipProp extends TooltipProps {
@@ -26,7 +26,7 @@ export interface CustomTooltipProp extends TooltipProps {
         | 'top-start'
         | 'top';
     popperProps?: Partial<PopperProps>;
-    title: NonNullable<React.ReactNode>;
+    title: string;
     bgColor?: string;
     fontColor?: string;
 }

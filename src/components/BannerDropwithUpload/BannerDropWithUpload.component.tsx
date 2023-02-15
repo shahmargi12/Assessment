@@ -17,7 +17,7 @@ type FormFileDropWithUploadProps = {
     onDelete: MouseEventHandler<HTMLButtonElement>;
     bannerMimeType: string | 'image/png, image/gif, image/jpeg, image/jpg';
     imgSize: { size: number; message: string };
-    removeBrowseBannerImage?: boolean;
+    removeBrowseBannerImage: boolean;
     isAllowUploadBanner: boolean;
     bgImgUrl?: string;
     forColor?: string;
@@ -25,6 +25,7 @@ type FormFileDropWithUploadProps = {
     shouldShowHint?: boolean;
     imgSizeLabel?: string;
     isMultiple?: boolean;
+    entityName: string;
 };
 
 type bannerLabels = {
@@ -58,9 +59,10 @@ function BannerDropWithUploadComponent({
     forColor,
     shouldShowHint,
     isMultiple,
+    entityName,
     ...otherProps
 }: FormFileDropWithUploadProps): JSX.Element {
-    const [bannerImageUrl, setBannerImageUrl] = useState<string>();
+    const [bannerImageUrl, setBannerImageUrl] = useState<string>('');
     const [removeImage, setRemoveImage] = useState<boolean>(removeBrowseBannerImage);
     const [error, setError] = useState<string>('');
     const [bannerError, setBannerError] = useState<boolean>(false);
@@ -68,12 +70,12 @@ function BannerDropWithUploadComponent({
     const labels = { ...LABELS, ...bannerLabels };
 
     const onUploadBanner = (id: string) => {
-        document.getElementById(id).click();
+        document.getElementById(id)?.click();
     };
 
     //   const entity = useSelectedEntity();
 
-    const onBannerChange = (file: FileList, uploadType: string, event: React.ChangeEvent<HTMLInputElement>) => {
+    const onBannerChange = (file: FileList | null, uploadType: string, event: React.ChangeEvent<HTMLInputElement>) => {
         const typeList = bannerMimeType.split(',').map((f) => f.trim());
 
         const isType = [...file].every((f) => typeList.includes(f.type));
@@ -93,11 +95,11 @@ function BannerDropWithUploadComponent({
             getAlert('error', imgSize.message);
             setBannerError(true);
         }
-        if (event && event.target) event.target.value = null;
+        if (event && event.target) event.target.value = '';
     };
 
     const onDeleteFile = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        setBannerImageUrl(null);
+        setBannerImageUrl('');
         onDelete(event);
     };
 
@@ -164,12 +166,9 @@ function BannerDropWithUploadComponent({
                                         {labels.infoLabel}
                                     </p>
                                 )}
-                                {/* {entity?.entityName === "Student" &&
-                  labels.reccomendationLabel && (
-                    <p className="studentHintPara">
-                      {labels.reccomendationLabel}
-                    </p>
-                  )} */}
+                                {entityName === 'Student' && labels.reccomendationLabel && (
+                                    <p className="studentHintPara">{labels.reccomendationLabel}</p>
+                                )}
                             </button>
                         </StyleBannerButton>
                     </>
@@ -198,6 +197,7 @@ BannerDropWithUploadComponent.defaultProps = {
     isAllowUploadBanner: true,
     bgImgUrl: '',
     shouldShowHint: true,
+    entityName: '',
 };
 
 export default BannerDropWithUploadComponent;

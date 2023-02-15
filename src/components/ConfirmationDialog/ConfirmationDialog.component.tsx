@@ -16,7 +16,7 @@ type DialogProps = {
         cancelText: string;
     };
     disabled?: boolean;
-    width?: string;
+    width: string;
 };
 
 function ConfirmationDialog({
@@ -81,5 +81,7 @@ function ConfirmationDialog({
     );
 }
 
-ConfirmationDialog.defaultProps = {};
+ConfirmationDialog.defaultProps = {
+    width: '555px',
+};
 export default ConfirmationDialog;

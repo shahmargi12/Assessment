@@ -37,12 +37,14 @@ CheckboxGroup.args = {
             checked: false,
             label: 'Tennis',
             key: 'a',
+            value:'tennis'
         },
         {
             name: 'cricket',
             checked: true,
             label: 'Cricket',
             key: 'b',
+            value:'cricket'
         },
         {
             name: 'football',
@@ -50,6 +52,8 @@ CheckboxGroup.args = {
             label: 'Football',
             key: 'c',
             disabled: true,
+            value:'football'
+
         },
         {
             name: 'handball',
@@ -57,6 +61,8 @@ CheckboxGroup.args = {
             label: 'Handball',
             key: 'd',
             disabled: true,
+            value:'handball'
+
         },
         {
             name: 'table_tennis',
@@ -64,6 +70,7 @@ CheckboxGroup.args = {
             label: 'Table Tennis',
             key: 'f',
             indeterminate: true,
+            value:'table_tennis'
         },
         {
             name: 'other',
@@ -72,6 +79,7 @@ CheckboxGroup.args = {
             key: 'e',
             disabled: true,
             indeterminate: true,
+            value:'other'
         },
     ],
     formHelperText: 'Select at least 2 from here',

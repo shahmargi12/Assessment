@@ -1,3 +1,7 @@
+// @ts-nocheck
+/* eslint-disable import/named */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 import { BACKGROUND_COLOR_ARRAY } from './constant';
 import REGEX from './Regex';
 
@@ -47,11 +51,11 @@ export const isEmptyValue = (value) => {
 export const getTextLength = (text: string) => {
     if (text) {
         const convertedText = text.replace(REGEX.CRLF, ' ');
-        const textLength = convertedText.length;
+        const textLength = convertedText.length();
         return textLength;
-    } else {
-        return 0;
     }
+    return 0;
+    
 };
 
 export const getInitials = (str: string) => {

@@ -3,12 +3,11 @@ import styled from 'styled-components';
 
 interface StatusLabelsProps {
     bgColor: string;
-    padding: string;
     onBlur?: () => void;
 }
 
 type MinHeightProps = {
-    minHeight: boolean;
+    minHeight?: boolean;
 };
 
 export const StyledInput = styled(TextField)<StatusLabelsProps>`

@@ -10,7 +10,7 @@ type StyledInitialContainerProps = {
     widthContainer: string;
     heightContainer: string;
     fontSize: string;
-    avatarBackgroundColor: string;
+    avatarBackgroundColor?: string;
     isAvatarColor: boolean;
     fontWeight?: string;
 };
@@ -22,7 +22,7 @@ export const StyledInitialContainer = styled.div<StyledInitialContainerProps>`
             ? avatarBackgroundColor
             : color === 'primary'
             ? theme.colors.primaryBlack10
-            : theme.colors.other1};
+            : theme.colors.primaryBlack20};
     width: ${({ widthContainer }) => widthContainer};
     height: ${({ heightContainer }) => heightContainer};
     ${({ fontSize }) => {

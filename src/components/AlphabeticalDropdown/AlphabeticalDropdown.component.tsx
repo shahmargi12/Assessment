@@ -23,7 +23,7 @@ type AlphabeticalDropdownProps = {
     items: Record<string, ItemProps[]>;
     placeholder: string;
     width: string;
-    isSearchable?: boolean; // if true then local search, if false then api call function received via searchApiCall param
+    isSearchable: boolean; // if true then local search, if false then api call function received via searchApiCall param
     maxValuesShow?: number;
     error?: boolean;
     errorMessage?: string;

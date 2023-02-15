@@ -21,14 +21,14 @@ export type DropdownProps = {
     onChange: (newValue: unknown, actionMeta: ActionMeta<unknown>) => void;
     closeMenuOnSelect: boolean;
     hideSelectedOptions: boolean;
-    isCheckboxList?: boolean;
+    isCheckboxList: boolean;
     isLoading?: boolean;
-    isFullwidth?: boolean;
+    isFullwidth: boolean;
     id?: string;
     onInputChange: (newValue: string, actionMeta: InputActionMeta) => void;
     isInfinite?: boolean;
     debounceDuration?: number;
-    onFocus: React.FocusEventHandler<HTMLInputElement>;
+    onFocus?: React.FocusEventHandler<HTMLInputElement>;
     defaultValue: DropdownItem | number;
     selectRef?: React.RefObject<unknown>;
     disable?: boolean;
@@ -62,11 +62,9 @@ const Dropdown = (props: DropdownProps): JSX.Element => {
         onFocus,
         defaultValue,
         disable,
-        maxChipsToShow,
         maxMenuHeight,
-        onRemove,
-        isRemoveIconVisible,
         menuPlacement,
+        isCheckboxList,
         onBlur,
     } = props;
 
@@ -90,11 +88,9 @@ const Dropdown = (props: DropdownProps): JSX.Element => {
             onFocus={onFocus}
             defaultValue={defaultValue}
             isDisabled={disable}
-            maxChipsToShow={maxChipsToShow}
-            onRemove={onRemove}
-            isRemoveIconVisible={isRemoveIconVisible}
-            menuPlacement={menuPlacement}
+            menuPlacement={menuPlacement as MenuPlacement}
             onBlur={onBlur}
+            isCheckboxList={isCheckboxList}
         />
     );
 };

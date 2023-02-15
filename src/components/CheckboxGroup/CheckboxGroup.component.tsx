@@ -3,7 +3,13 @@ import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import Icons from '../../Icons';
-import { StyledCheckbox, StyledFormControlLabel, StyledFormGroup } from './CheckboxGroup.styled';
+import {
+    StyledCheckbox,
+    StyledFilter,
+    StyledFormControl,
+    StyledFormControlLabel,
+    StyledFormGroup,
+} from './CheckboxGroup.styled';
 
 type CheckboxItem = {
     label: string;
@@ -12,6 +18,7 @@ type CheckboxItem = {
     disabled?: boolean;
     key: string;
     indeterminate?: boolean;
+    value: string | number;
 };
 
 export interface CheckboxGroupProps {
@@ -26,6 +33,7 @@ export interface CheckboxGroupProps {
     onBlur?: (e: React.FocusEvent<HTMLLabelElement, Element>, item: CheckboxItem) => void;
     height?: number;
     width?: number;
+    statusNumber: { [key: string | number]: number };
 }
 
 function CheckboxGroup({
@@ -40,42 +48,44 @@ function CheckboxGroup({
     isDisable,
     height,
     width,
+    statusNumber,
 }: CheckboxGroupProps): JSX.Element {
     return (
-        <FormControl component="fieldset" error={error}>
+        <StyledFormControl component="fieldset" error={error}>
             {formLabel ? <FormLabel component="legend">{formLabel}</FormLabel> : null}
-            <StyledFormGroup
-                classes={{
-                    root: align === 'vertical' ? 'verticalRoot' : 'horizontalRoot',
-                }}
-            >
+            <StyledFormGroup classes={{ root: align === 'vertical' ? 'verticalRoot' : 'horizontalRoot' }}>
                 {items.map((item, index) => {
                     return (
-                        <StyledFormControlLabel
-                            key={index}
-                            control={
-                                <StyledCheckbox
-                                    checked={item.checked}
-                                    onChange={(e, other) => onChange(item, other)}
-                                    name={item.name}
-                                    color="primary"
-                                    indeterminate={item.indeterminate}
-                                    size={size}
-                                    icon={<Icons.CheckboxIcon />}
-                                    checkedIcon={<Icons.CheckboxSelectedIcon />}
-                                    height={height}
-                                    width={width}
-                                />
-                            }
-                            label={item.label}
-                            disabled={isDisable ? isDisable : item.disabled}
-                            onBlur={(e) => (onBlur ? onBlur(e, item) : null)}
-                        />
+                        <StyledFilter>
+                            <StyledFormControlLabel
+                                key={index}
+                                control={
+                                    <StyledCheckbox
+                                        checked={item.checked}
+                                        onChange={(e, other) => onChange(item, other)}
+                                        name={item.name}
+                                        color="primary"
+                                        indeterminate={item.indeterminate}
+                                        size={size}
+                                        icon={<Icons.CheckboxIcon />}
+                                        checkedIcon={<Icons.CheckboxSelectedIcon />}
+                                        height={height}
+                                        width={width}
+                                    />
+                                }
+                                label={item.label}
+                                disabled={isDisable ? isDisable : item.disabled}
+                                onBlur={(e) => (onBlur ? onBlur(e, item) : null)}
+                            />
+                            {(statusNumber && item && statusNumber[item.value]) !== undefined ? (
+                                <p>{statusNumber[item.value] === 0 ? null : statusNumber[item.value]}</p>
+                            ) : null}
+                        </StyledFilter>
                     );
                 })}
             </StyledFormGroup>
             {formHelperText ? <FormHelperText>{formHelperText}</FormHelperText> : null}
-        </FormControl>
+        </StyledFormControl>
     );
 }
 CheckboxGroup.defaultProps = {
@@ -83,5 +93,7 @@ CheckboxGroup.defaultProps = {
     align: 'vertical',
     height: 22,
     width: 22,
+    pendingCount: 0,
+    statusNumber: {},
 };
 export default CheckboxGroup;
