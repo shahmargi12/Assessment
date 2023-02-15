@@ -11,7 +11,7 @@ type Props = {
     fileSrc: string;
     fileType: 'image' | 'PDF';
     showDownloadIcon?: boolean;
-    onDownload?: React.MouseEventHandler;
+    onDownload: React.MouseEventHandler;
     onClose: React.MouseEventHandler;
 };
 
@@ -44,6 +44,7 @@ const FilePreview = ({ fileSrc, showDownloadIcon, fileType, onDownload, onClose 
                             loader={<CircularLoader color={'#ffffff'} height="calc(100vh - 23rem)" />}
                             fixHeight={true}
                             pageNumber={1}
+                            onEnlargeIconClick={() => {}}
                         />
                     )}
                 </StyledPreviewBody>
