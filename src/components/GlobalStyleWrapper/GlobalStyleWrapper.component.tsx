@@ -33,7 +33,7 @@ const materialUiTheme = createTheme({
     },
 });
 
-const GlobalStyleWrapper = ({ theme, children, GlobalStyle }: GlobalStyleWrapperProp): React.ReactElement => {
+const GlobalStyleWrapper = ({ theme, children, GlobalStyle }: GlobalStyleWrapperProp): JSX.Element => {
     return (
         <StyledEngineProvider injectFirst>
             <MaterialThemeProvider theme={materialUiTheme}>

@@ -1,6 +1,6 @@
 {
     "name": "@shahmargi12/assess-lib",
-    "version": "0.0.22",
+    "version": "0.0.27",
     "module": "./lib/esm/index.js",
     "types": "lib/index.d.ts",
     "files": [
@@ -8,20 +8,6 @@
     ],
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/shahmargi12"
-    },
-    "exports": {
-        ".": {
-            "import": "./lib/esm",
-            "require": "./lib/cjs/component-kit.js"
-        },
-        "./lib": {
-            "import": "./lib/esm",
-            "require": "./lib/cjs/component-kit.js"
-        },
-        "./lib/index": {
-            "import": "./lib/esm",
-            "require": "./lib/cjs/component-kit.js"
-        }
     },
     "scripts": {
         "start": "vite",
